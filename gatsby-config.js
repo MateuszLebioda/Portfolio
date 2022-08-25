@@ -1,14 +1,38 @@
 module.exports = {
   siteMetadata: {
-    title: `Portfolio`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Mateusz Lebioda`,
   },
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/assets/images/icon/icon.png",
+      },
     },
-    __key: "images"
-  }]
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "background",
+        path: `${__dirname}/src/assets/images/background`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "logo",
+        path: `${__dirname}/src/assets/images/logo`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "icon",
+        path: `${__dirname}/src/assets/images/icon`,
+      },
+    },
+  ],
 };
