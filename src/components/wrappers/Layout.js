@@ -1,12 +1,17 @@
 import React from "react";
-import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "normalize.css";
 import "primeflex/primeflex.css";
 import "../../assets/style/global-style.css";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
+import {
+  fas,
+  faSchool,
+  faBriefcase,
+  faGraduationCap,
+  faArrowRightToBracket,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
   faGithub,
@@ -29,13 +34,16 @@ library.add(
   faJs,
   faHtml5,
   faCss3Alt,
+  faSchool,
+  faBriefcase,
+  faGraduationCap,
+  faArrowRightToBracket,
   faFontAwesome
 );
 
 const Layout = ({ children }) => {
   return (
     <>
-      {/* <Navbar /> */}
       {children}
       <Footer />
     </>

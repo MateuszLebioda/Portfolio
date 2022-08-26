@@ -4,9 +4,10 @@ import React from "react";
 import styled from "styled-components";
 import SocialIconButton from "../../utils/SocialIconButton";
 import previewData from "./preview-data";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PreviewStyle = styled.section`
+  font-family: "Silkscreen", cursive;
+
   min-height: 100vh;
   display: flex;
   padding-left: 5rem;
@@ -45,6 +46,11 @@ const PreviewStyle = styled.section`
 
     .preview-info-content {
       margin-top: 0px;
+      max-height: 50vh;
+    }
+
+    .previe-image-container {
+      max-height: 50vh;
     }
     .preview-avatar-image {
       margin-left: auto;
@@ -82,21 +88,19 @@ const Preview = () => {
         className="preview-avatar-background"
       />
       <div className="preview-info-content flex-1 flex flex-column justify-content-center z-2">
-        <div>
-          <h1 className="text-center text-6xl">{previewData.title}</h1>
-          {previewData.description.map((t) => (
-            <p className="preview-description-container text-xl">
-              <div className="preview-paragraf text-center">{t.name}</div>
-            </p>
+        <h1 className="text-center text-6xl">{previewData.title}</h1>
+        {previewData.description.map((t) => (
+          <p className="preview-description-container text-xl">
+            <div className="preview-paragraf text-center">{t.name}</div>
+          </p>
+        ))}
+        <div className="flex justify-content-center">
+          {previewData.social.map((i, index) => (
+            <SocialIconButton key={index} {...i} />
           ))}
-          <div className="flex justify-content-center">
-            {previewData.social.map((i, index) => (
-              <SocialIconButton key={index} {...i} />
-            ))}
-          </div>
         </div>
       </div>
-      <div className="flex-1 flex previe-image-container">
+      <div className="previe-image-container flex-1 flex ">
         <GatsbyImage
           image={getImage(imageAvatar)}
           className="preview-avatar-image m-auto"

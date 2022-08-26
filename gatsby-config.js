@@ -34,5 +34,12 @@ module.exports = {
         path: `${__dirname}/src/assets/images/icon`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "timeLine",
+        path: `${__dirname}/src/assets/images/timeLine`,
+      },
+    },
   ],
 };
