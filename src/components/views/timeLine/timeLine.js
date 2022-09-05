@@ -22,13 +22,39 @@ const TimeLineStyle = styled.section`
     padding-top: 0;
     padding-bottom: 0;
   }
+
+  .time-line-image-icon {
+    margin: 12px;
+  }
+
+  @media only screen and (max-width: 1170px) {
+    .time-line-image-icon {
+      margin: 5px;
+    }
+  }
 `;
 const TimeLine = () => {
   const files = useStaticQuery(query);
-  const images = files.allFile?.nodes;
+  const images = files.timeLineImages?.nodes;
+  const imagesIcon = files.timeLineIcons?.nodes;
 
   const mapTimeLineObject = (timeLineObject) => {
     const img = getImage(images.find((i) => i.name === timeLineObject.image));
+    const imageIcon = getImage(
+      imagesIcon.find((i) => i.name === timeLineObject.icon.imageIcon)
+    );
+
+    const icon = ({ icon }, imageIcon) => {
+      if (icon.name) {
+        return <FontAwesomeIcon icon={timeLineObject.icon.name} />;
+      } else if (imageIcon) {
+        return (
+          <GatsbyImage image={imageIcon} className="time-line-image-icon" />
+        );
+      }
+      return null;
+    };
+
     return (
       <VerticalTimelineElement
         contentStyle={{
@@ -38,7 +64,7 @@ const TimeLine = () => {
         date={timeLineObject.date}
         iconStyle={timeLineObject.icon}
         contentArrowStyle={{ border: "solid 0px white" }}
-        icon={<FontAwesomeIcon icon={timeLineObject.icon.name} />}
+        icon={icon(timeLineObject, imageIcon)}
       >
         <div>
           <h3>{timeLineObject.name}</h3>
@@ -51,7 +77,7 @@ const TimeLine = () => {
           {timeLineObject.links && (
             <div className="flex flex-row-reverse mt-2">
               {timeLineObject?.links?.map((l) => (
-                <TimeLineTabButton {...l} />
+                <TimeLineTabButton {...l} imageIcon={imageIcon} />
               ))}
             </div>
           )}
@@ -73,10 +99,20 @@ export default TimeLine;
 
 const query = graphql`
   {
-    allFile(filter: { sourceInstanceName: { eq: "timeLine" } }) {
+    timeLineImages: allFile(
+      filter: { sourceInstanceName: { eq: "timeLine" } }
+    ) {
       nodes {
         childImageSharp {
           gatsbyImageData(placeholder: TRACED_SVG, height: 75)
+        }
+        name
+      }
+    }
+    timeLineIcons: allFile(filter: { sourceInstanceName: { eq: "icon" } }) {
+      nodes {
+        childImageSharp {
+          gatsbyImageData(placeholder: TRACED_SVG, height: 40)
         }
         name
       }

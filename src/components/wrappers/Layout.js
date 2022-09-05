@@ -22,6 +22,7 @@ import {
   faHtml5,
   faCss3Alt,
   faJs,
+  faNode,
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
@@ -38,6 +39,7 @@ library.add(
   faBriefcase,
   faGraduationCap,
   faArrowRightToBracket,
+  faNode,
   faFontAwesome
 );
 
