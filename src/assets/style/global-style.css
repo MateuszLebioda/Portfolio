@@ -11,7 +11,26 @@ a {
   color: black;
 }
 
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.preview-avatar-background {
+  filter: blur(4px);
+  opacity: 0.2;
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 :root {
+  --form-outline-color: gray;
+  --form-valid-color: #408fd4;
+  --form-invalid-color: red;
+
   --text-color: #495057;
   --text-color-secondary: #6c757d;
   --primary-color: #2196f3;

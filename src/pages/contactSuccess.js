@@ -3,15 +3,18 @@ import React from "react";
 import AvatarPage from "../components/views/avatarPage/avatarPage";
 import Layout from "../components/wrappers/Layout";
 
-const NotFound = () => {
+const ContactSuccess = () => {
   return (
     <Layout>
-      <AvatarPage header="404" message="Nie udało się odnaleźć strony" />
+      <AvatarPage
+        header="Dzięki za kontakt"
+        message="Odezwę się najszybciej jak się da"
+      />
     </Layout>
   );
 };
 
-export default NotFound;
+export default ContactSuccess;
 
 export const Head = ({ data }) => {
   return <title>{data.site.siteMetadata.title}</title>;

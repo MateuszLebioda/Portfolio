@@ -2,13 +2,14 @@ import { graphql } from "gatsby";
 import React from "react";
 import Preview from "../components/views/preview/preview";
 import TimeLine from "../components/views/timeLine/timeLine";
+import Layout from "../components/wrappers/Layout";
 
 const IndexPage = () => {
   return (
-    <>
+    <Layout>
       <Preview />
       <TimeLine />
-    </>
+    </Layout>
   );
 };
 

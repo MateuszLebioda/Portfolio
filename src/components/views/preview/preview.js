@@ -2,8 +2,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
+import previewData from "../../../data/preview-data";
 import SocialIconButton from "../../utils/SocialIconButton";
-import previewData from "./preview-data";
 
 const PreviewStyle = styled.section`
   font-family: "Silkscreen", cursive;
@@ -21,16 +21,6 @@ const PreviewStyle = styled.section`
   .preview-description-container {
     display: flex;
     justify-content: center;
-  }
-
-  .preview-avatar-background {
-    filter: blur(4px);
-    opacity: 0.2;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
   }
 
   @media only screen and (max-width: 860px) {
@@ -86,13 +76,17 @@ const Preview = () => {
       <GatsbyImage
         image={getImage(imageBackground)}
         className="preview-avatar-background"
+        alt="background"
       />
       <div className="preview-info-content flex-1 flex flex-column justify-content-center z-2">
         <h1 className="text-center text-6xl">{previewData.title}</h1>
-        {previewData.description.map((t) => (
-          <p className="preview-description-container text-xl">
+        {previewData.description.map((t, index) => (
+          <div
+            className="preview-description-container text-xl my-2"
+            key={`description-${index}`}
+          >
             <div className="preview-paragraf text-center">{t.name}</div>
-          </p>
+          </div>
         ))}
         <div className="flex justify-content-center">
           {previewData.social.map((i, index) => (
@@ -104,6 +98,7 @@ const Preview = () => {
         <GatsbyImage
           image={getImage(imageAvatar)}
           className="preview-avatar-image m-auto"
+          alt="avatar"
         />
       </div>
     </PreviewStyle>
