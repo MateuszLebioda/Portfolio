@@ -2,10 +2,10 @@ import { graphql, navigate } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
-import OutlineButton from "../components/utils/outlineButton";
-import UnderlineInput from "../components/utils/underlineInput";
-import UnderlineTextArea from "../components/utils/underlineTextArea";
-import Layout from "../components/wrappers/Layout";
+import Layout from "../../components/wrappers/Layout";
+import UnderlineInput from "../../components/utils/underlineInput";
+import OutlineButton from "../../components/utils/OutlineButton";
+import UnderlineTextArea from "../../components/utils/UnderlineTextArea";
 
 const ContactMeStyle = styled.div`
   min-height: 100vh;
@@ -28,10 +28,34 @@ const ContactMeStyle = styled.div`
     opacity: 0.15;
   }
 
+  .contact-me-button-container {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .preview-avatar-background {
+    position: absolute;
+    min-height: calc(100vh + 90px);
+  }
+
   @media only screen and (max-width: 860px) {
     .contact-me-card {
-      min-width: 80vw;
-      max-width: 90vw;
+      min-width: calc(100vw - 5px);
+      min-height: 100vh;
+      background-color: transparent;
+    }
+
+    h1 {
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
+
+    .contact-me-button-container {
+      width: 80%;
     }
   }
 `;
@@ -39,7 +63,7 @@ const ContactMeStyle = styled.div`
 const ContactMe = ({ data }) => {
   const imageBackground = data.fileBackground?.childImageSharp;
 
-  const onSubmit = (e) => {
+  const onSubmit = e => {
     e.preventDefault();
     let myForm = e.target;
     let formData = new FormData(myForm);
@@ -48,10 +72,10 @@ const ContactMe = ({ data }) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then((r) => {
-        navigate("/contactSuccess");
+      .then(r => {
+        navigate("/contact/error");
       })
-      .catch((e) => {
+      .catch(e => {
         //TODO: Add error page
         console.log(e);
       });
@@ -66,12 +90,7 @@ const ContactMe = ({ data }) => {
           alt="background"
         />
         <div className="contact-me-card z-2">
-          <h1 className="text-center">Zapraszam do kontaktu</h1>
-          <GatsbyImage
-            image={getImage(imageBackground)}
-            className="contact-me-card-background  preview-avatar-background"
-            alt="background"
-          />
+          <h1 className="text-center mt-6">Zapraszam do kontaktu</h1>
           <div className="z-2 p-2">
             <form
               name="Contact Form"
@@ -87,7 +106,7 @@ const ContactMe = ({ data }) => {
               <div className="flex justify-content-center py-3">
                 <UnderlineTextArea label="Treść wiadomości" name="message" />
               </div>
-              <div className="flex justify-content-center">
+              <div className="contact-me-button-container flex justify-content-center">
                 <OutlineButton label="Skontaktuj się" />
               </div>
             </form>

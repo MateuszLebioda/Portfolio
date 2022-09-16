@@ -4,7 +4,7 @@ import styled from "styled-components";
 const UnderlineTextAreaStyle = styled.div`
   margin-top: 1rem;
   position: relative;
-  width: 75%;
+  width: 85%;
   min-height: 30vh;
 
   textarea {

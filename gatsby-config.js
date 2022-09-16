@@ -41,5 +41,12 @@ module.exports = {
         path: `${__dirname}/src/assets/images/timeLine`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "logoTech",
+        path: `${__dirname}/src/assets/images/logoTech`,
+      },
+    },
   ],
 };

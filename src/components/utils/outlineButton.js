@@ -6,7 +6,7 @@ const OutlineButtonStyle = styled.button`
   display: inline-block;
   border: 2px solid #111;
   padding: 15px 30px;
-  width: 50%;
+  width: 100%;
   text-align: center;
 
   color: var(--form-color);

@@ -88,7 +88,7 @@ const Footer = () => {
         )}
 
         <Link
-          to="/contactMe"
+          to="/contact/me"
           className="footer-social-buttons flex footer-info-container"
         >
           <BiMessageAltDetail className="my-auto" />

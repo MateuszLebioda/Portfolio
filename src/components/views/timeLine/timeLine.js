@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -11,9 +11,11 @@ import TimeLineTabButton from "./timeLineTagButton";
 import timeLineData from "../../../data/timeLine-data";
 import * as FontAwesome from "react-icons/fa";
 
-const TimeLineStyle = styled.section`
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+const TimeLineStyle = styled.div`
+  .time-line-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
 
   .default-date-style {
     color: black;
@@ -48,15 +50,33 @@ const TimeLineStyle = styled.section`
     }
   }
 `;
-const TimeLine = () => {
+const TimeLine = props => {
   const files = useStaticQuery(query);
   const images = files.timeLineImages?.nodes;
   const imagesIcon = files.timeLineIcons?.nodes;
+  const imageBackground = files.fileBackground?.childImageSharp;
+
+  const [isSmalScreen, setSmalScreen] = useState(null);
+
+  useEffect(() => {
+    if (isSmalScreen === null) {
+      setSmalScreen(!isSmalScreen && window.innerWidth <= 860);
+    }
+
+    window.addEventListener("resize", event => {
+      if (isSmalScreen && window.innerWidth > 860) {
+        setSmalScreen(false);
+      } else if (!isSmalScreen && window.innerWidth <= 860) {
+        setSmalScreen(true);
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const mapTimeLineObject = (timeLineObject, index) => {
-    const img = getImage(images.find((i) => i.name === timeLineObject.image));
+    const img = getImage(images.find(i => i.name === timeLineObject.image));
     const imageIcon = getImage(
-      imagesIcon.find((i) => i.name === timeLineObject.icon.imageIcon)
+      imagesIcon.find(i => i.name === timeLineObject.icon.imageIcon)
     );
 
     const icon = ({ icon }, imageIcon) => {
@@ -118,9 +138,20 @@ const TimeLine = () => {
 
   return (
     <TimeLineStyle>
-      <VerticalTimeline animate lineColor="Black">
-        {timeLineData.map(mapTimeLineObject)}
-      </VerticalTimeline>
+      <GatsbyImage
+        image={getImage(imageBackground)}
+        className="fixed preview-avatar-background"
+        alt="background"
+      />
+      <div
+        className={`time-line-container ${
+          props.gradient && "time-line-gradient"
+        }`}
+      >
+        <VerticalTimeline animate={!isSmalScreen} lineColor="Black">
+          {timeLineData.map(mapTimeLineObject)}
+        </VerticalTimeline>
+      </div>
     </TimeLineStyle>
   );
 };
@@ -145,6 +176,11 @@ const query = graphql`
           gatsbyImageData(placeholder: TRACED_SVG, height: 40)
         }
         name
+      }
+    }
+    fileBackground: file(name: { in: "code-background" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: TRACED_SVG)
       }
     }
   }

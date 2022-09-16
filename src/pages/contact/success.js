@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
-import AvatarPage from "../components/views/avatarPage/avatarPage";
-import Layout from "../components/wrappers/Layout";
+import AvatarPage from "../../components/views/avatarPage/avatarPage";
+import Layout from "../../components/wrappers/Layout";
 
 const ContactSuccess = () => {
   return (
