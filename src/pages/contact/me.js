@@ -32,6 +32,8 @@ const ContactMeStyle = styled.div`
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   .preview-avatar-background {
@@ -56,6 +58,7 @@ const ContactMeStyle = styled.div`
 
     .contact-me-button-container {
       width: 80%;
+      margin-bottom: 0;
     }
   }
 `;
