@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const UnderlineInputStyle = styled.div`
-  width: ${(props) => props?.style?.width || "85%"};
+  width: ${props => props?.style?.width || "85%"};
   background: transparent;
-  padding: ${(props) => props?.style?.padding || "0px"};
-  margin: ${(props) => props?.style?.margin || "auto"};
+  padding: ${props => props?.style?.padding || "0px"};
+  margin: ${props => props?.style?.margin || "auto"};
   padding-top: 1rem;
   padding-bottom: 1rem;
 
@@ -71,7 +71,8 @@ const UnderlineInputStyle = styled.div`
   }
 `;
 
-const UnderlineInput = (props) => {
+const UnderlineInput = props => {
+  console.log(props.label);
   return (
     <UnderlineInputStyle>
       <div className="underline-data">

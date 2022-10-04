@@ -6,6 +6,9 @@ import Layout from "../../components/wrappers/Layout";
 import UnderlineInput from "../../components/utils/underlineInput";
 import OutlineButton from "../../components/utils/OutlineButton";
 import UnderlineTextArea from "../../components/utils/UnderlineTextArea";
+import { getLink } from "../../utils/navigation";
+import { translate } from "../../utils/translator";
+import { contactData } from "../../data/complex-data";
 
 const ContactMeStyle = styled.div`
   min-height: 100vh;
@@ -76,11 +79,10 @@ const ContactMe = ({ data }) => {
       body: new URLSearchParams(formData).toString(),
     })
       .then(r => {
-        navigate("/contact/error");
+        navigate(getLink("/contact/success"));
       })
       .catch(e => {
-        //TODO: Add error page
-        console.log(e);
+        navigate(getLink("/contact/error"));
       });
   };
 
@@ -93,7 +95,9 @@ const ContactMe = ({ data }) => {
           alt="background"
         />
         <div className="contact-me-card z-2">
-          <h1 className="text-center mt-6">Zapraszam do kontaktu</h1>
+          <h1 className="text-center mt-6">
+            {translate(contactData, "contactMe")}
+          </h1>
           <div className="z-2 p-2">
             <form
               name="Contact Form"
@@ -104,13 +108,21 @@ const ContactMe = ({ data }) => {
             >
               <input type="hidden" name="bot-field" />
               <input type="hidden" name="form-name" value="Contact Form" />
-              <UnderlineInput label="Imię" name="name" />
+              <UnderlineInput
+                label={translate(contactData, "name")}
+                name="name"
+              />
               <UnderlineInput label="Email" type="email" name="email" />
               <div className="flex justify-content-center py-3">
-                <UnderlineTextArea label="Treść wiadomości" name="message" />
+                <UnderlineTextArea
+                  label={translate(contactData, "textMessage")}
+                  name="message"
+                />
               </div>
               <div className="contact-me-button-container flex justify-content-center">
-                <OutlineButton label="Skontaktuj się" />
+                <OutlineButton
+                  label={translate(contactData, "contactButtonMessage")}
+                />
               </div>
             </form>
           </div>

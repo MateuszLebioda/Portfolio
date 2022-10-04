@@ -3,7 +3,7 @@ import React from "react";
 import Preview from "../components/views/preview/preview";
 import Layout from "../components/wrappers/Layout";
 
-const IndexPage = () => {
+const IndexEnPage = () => {
   return (
     <Layout>
       <Preview />
@@ -11,7 +11,7 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default IndexEnPage;
 
 export const Head = ({ data }) => <title>{data.site.siteMetadata.title}</title>;
 

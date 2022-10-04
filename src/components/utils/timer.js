@@ -1,6 +1,8 @@
 import moment from "moment/moment";
 import React from "react";
 import styled from "styled-components";
+import { aboutMeData } from "../../data/complex-data";
+import { translate } from "../../utils/translator";
 
 const TimerStyle = styled.div`
   text-align: center;
@@ -16,7 +18,7 @@ const Timer = props => {
   return (
     <TimerStyle className={props.className}>
       <h1>{value()}</h1>
-      <h3>{props.label}</h3>
+      <h3>{translate(aboutMeData, props.diff)}</h3>
     </TimerStyle>
   );
 };

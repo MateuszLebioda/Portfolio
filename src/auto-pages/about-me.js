@@ -4,8 +4,8 @@ import Timer from "../components/utils/timer";
 import PreviewTemplate from "../components/views/preview/previewTemplate";
 import Skills from "../components/views/skills/skills";
 import Layout from "../components/wrappers/Layout";
-import aboutMeData from "../data/about-me-data";
-import previewData from "../data/preview-data";
+import { aboutMeData } from "../data/complex-data";
+import { translate } from "../utils/translator";
 
 const AboutMeStyle = styled.section`
   .about-me-timer-container {
@@ -72,9 +72,16 @@ const AboutMe = () => {
   return (
     <AboutMeStyle>
       <Layout>
-        <PreviewTemplate desc={previewData.myDesc} fixed social maxWidth="25vw">
+        <PreviewTemplate
+          desc={translate(aboutMeData, "description")}
+          fixed
+          social
+          maxWidth="25vw"
+        >
           <div>
-            <h2 className="text-center about-me-font">Programista od</h2>
+            <h2 className="text-center about-me-font">
+              {translate(aboutMeData, "developerFor")}
+            </h2>
             <div className="flex about-me-timer-container">
               {time.map((t, index) => (
                 <Timer

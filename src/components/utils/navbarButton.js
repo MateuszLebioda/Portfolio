@@ -2,9 +2,13 @@ import { Link } from "gatsby";
 import React from "react";
 
 import styled from "styled-components";
+import { getLink } from "../../utils/navigation";
+import { translate } from "../../utils/translator";
 import Icon from "./icon";
 
-const NavbarButton = (props) => {
+const NavbarButton = props => {
+  const label = translate(props, "label");
+
   const NavbarButtonStyle = styled.div`
     width: 100%;
     height: 50px;
@@ -34,7 +38,7 @@ const NavbarButton = (props) => {
         .navbar-button-label-container {
           background-color: ${props.background || "blue"};
           display: inline-block;
-          width: ${`calc((${props.label.length}rem / 2) + 25px)`};
+          width: ${`calc((${label.length}rem / 2) + 25px)`};
         }
 
         .navbar-button-label-container {
@@ -72,11 +76,11 @@ const NavbarButton = (props) => {
 
   return (
     <NavbarButtonStyle>
-      <Link to={props.href} className="">
+      <Link to={getLink(props.href)} className="">
         <div className="navbar-button-container">
           <Icon icon={props.icon} className="navbar-button-icon" />
           <div className="navbar-button-label-container flex justify-content-center flex-column">
-            <div className="">{props.label}</div>
+            <div className="">{label}</div>
           </div>
         </div>
       </Link>

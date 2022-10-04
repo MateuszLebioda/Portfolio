@@ -2,7 +2,9 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
+import { aboutMeData } from "../../../data/complex-data";
 import previewData from "../../../data/preview-data";
+import { translate } from "../../../utils/translator";
 import SocialIconButton from "../../utils/SocialIconButton";
 
 const PreviewTemplate = props => {
@@ -145,14 +147,14 @@ const PreviewTemplate = props => {
       />
       <div className="flex preview-content-style">
         <div className="preview-info-content flex-1 flex flex-column justify-content-center z-2">
-          <h1 className="text-center">{previewData.title}</h1>
+          <h1 className="text-center">{aboutMeData.name}</h1>
           {props.jobs &&
-            previewData.description.map((t, index) => (
+            translate(aboutMeData, "programing").map((t, index) => (
               <div
                 className="preview-description-container my-2"
                 key={`description-${index}`}
               >
-                <div className="preview-paragraf text-center">{t.name}</div>
+                <div className="preview-paragraf text-center">{t}</div>
               </div>
             ))}
           {props.desc && <p className="preview-description">{props.desc}</p>}

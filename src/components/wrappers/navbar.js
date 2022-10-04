@@ -1,9 +1,13 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import navbarData from "../../data/navbar-data";
+import { linksList } from "../../data/complex-data";
 import previewData from "../../data/preview-data";
+import { changeLanguage } from "../../redux/language/languageSlice";
+import { getLink } from "../../utils/navigation";
+import { translate } from "../../utils/translator";
 import Icon from "../utils/icon";
 import NavbarButton from "../utils/navbarButton";
 import SocialIconButton from "../utils/SocialIconButton";
@@ -132,6 +136,9 @@ const Navbar = () => {
   const [isTop, setTop] = useState(true);
   const [isMenuActive, setMenuActive] = useState(false);
 
+  const dispatch = useDispatch();
+  const language = useSelector(state => state.language);
+
   useEffect(() => {
     window.onscroll = () => {
       if (isTop && window.pageYOffset >= 3) {
@@ -149,7 +156,7 @@ const Navbar = () => {
       >
         <div className="navbar-avatar-navigation">
           <div className="flex justify-content-center">
-            <Link to="/">
+            <Link to={getLink("/")}>
               <GatsbyImage
                 image={getImage(imageAvatar)}
                 alt="avatar"
@@ -158,7 +165,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="navbar-navigation">
-            {navbarData.links.map((l) => (
+            {linksList.map(l => (
               <div className="my-2">
                 <NavbarButton
                   {...l}
@@ -168,6 +175,16 @@ const Navbar = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div>
+          <button
+            onClick={() => {
+              dispatch(changeLanguage());
+            }}
+          >
+            {language.value}
+          </button>
         </div>
 
         <div className="navbar-social-buttons">
@@ -187,11 +204,12 @@ const Navbar = () => {
             } flex justify-content-center flex-column`}
             config={{
               onClick: () => {
-                setMenuActive((prev) => !prev);
+                setMenuActive(prev => !prev);
               },
             }}
           />
         </div>
+        {translate(1, 2)}
       </div>
 
       <div
@@ -199,7 +217,7 @@ const Navbar = () => {
           isTop ? "navbar-top-color" : "navbar-non-top-container"
         }`}
       >
-        {navbarData.links.map((l) => (
+        {linksList.map(l => (
           <Link to={l.href} onClick={() => setMenuActive(false)}>
             <div className="flex my-1 ml-3">
               <Icon icon={l.icon} className="my-auto mx-2" />

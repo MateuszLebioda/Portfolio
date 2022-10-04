@@ -7,6 +7,10 @@ import previewData from "../../data/preview-data";
 import SocialIconButton from "../utils/SocialIconButton";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { BiMessageAltDetail } from "react-icons/bi";
+import { contactData } from "../../data/complex-data";
+import { translate } from "../../utils/translator";
+
+import { getLink } from "../../utils/navigation";
 
 const FooterStyle = styled.footer`
   background-color: black;
@@ -65,35 +69,35 @@ const Footer = () => {
           &copy;
           {` ${new Date().getFullYear()} Copyright - Mateusz Lebioda`}
           <br />
-          Wszystkie prawa zastrzeżone
+          {translate(contactData, "rightReserved")}
         </div>
       </div>
       <div className="footer-info">
-        <h2>Kontakt</h2>
-        {contact.phone && (
+        <h2>{translate(contactData, "contact")}</h2>
+        {contactData.phone && (
           <div className="flex footer-info-container">
             <FaPhone className="my-auto" />
             <div className="footer-contact-value-container">
-              {contact.phone}
+              {contactData.phone}
             </div>
           </div>
         )}
-        {contact.email && (
+        {contactData.email && (
           <div className="flex footer-info-container">
             <FaEnvelope className="my-auto" />
             <div className="footer-contact-value-container">
-              {contact.email}
+              {contactData.email}
             </div>
           </div>
         )}
 
         <Link
-          to="/contact/me"
+          to={getLink("/contact/me")}
           className="footer-social-buttons flex footer-info-container"
         >
           <BiMessageAltDetail className="my-auto" />
           <div className="footer-contact-value-container">
-            Formularz kontaktowy
+            {translate(contactData, "contactForm")}
           </div>
         </Link>
         <div className="flex footer-info-container">
