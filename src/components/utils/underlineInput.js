@@ -72,7 +72,6 @@ const UnderlineInputStyle = styled.div`
 `;
 
 const UnderlineInput = props => {
-  console.log(props.label);
   return (
     <UnderlineInputStyle>
       <div className="underline-data">

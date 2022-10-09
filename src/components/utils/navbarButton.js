@@ -1,14 +1,12 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { useContext } from "react";
 
 import styled from "styled-components";
-import { getLink } from "../../utils/navigation";
-import { translate } from "../../utils/translator";
+import { LanguageContext } from "../../language/languageContext";
+import { generateLink } from "../../language/languageUtils";
 import Icon from "./icon";
 
 const NavbarButton = props => {
-  const label = translate(props, "label");
-
   const NavbarButtonStyle = styled.div`
     width: 100%;
     height: 50px;
@@ -38,7 +36,7 @@ const NavbarButton = props => {
         .navbar-button-label-container {
           background-color: ${props.background || "blue"};
           display: inline-block;
-          width: ${`calc((${label.length}rem / 2) + 25px)`};
+          width: ${`calc((${props.label.length}rem / 2) + 25px)`};
         }
 
         .navbar-button-label-container {
@@ -74,13 +72,15 @@ const NavbarButton = props => {
     }
   `;
 
+  const { language } = useContext(LanguageContext);
+
   return (
     <NavbarButtonStyle>
-      <Link to={getLink(props.href)} className="">
+      <Link to={generateLink(props.href, language)} className="">
         <div className="navbar-button-container">
           <Icon icon={props.icon} className="navbar-button-icon" />
           <div className="navbar-button-label-container flex justify-content-center flex-column">
-            <div className="">{label}</div>
+            <div className="">{props.label}</div>
           </div>
         </div>
       </Link>

@@ -2,10 +2,12 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
-import { aboutMeData } from "../../../data/complex-data";
-import previewData from "../../../data/preview-data";
-import { translate } from "../../../utils/translator";
+import { notTranslationSiteData } from "../../../data/string-data";
 import SocialIconButton from "../../utils/SocialIconButton";
+import { social } from "../../../data/social";
+import { useContext } from "react";
+import { LanguageContext } from "../../../language/languageContext";
+import { translate } from "../../../language/languageUtils";
 
 const PreviewTemplate = props => {
   const PreviewStyle = styled.section`
@@ -136,6 +138,8 @@ const PreviewTemplate = props => {
   const imageAvatar = file.fileAvatar?.childImageSharp;
   const imageBackground = file.fileBackground?.childImageSharp;
 
+  const { language } = useContext(LanguageContext);
+
   return (
     <PreviewStyle>
       <GatsbyImage
@@ -147,9 +151,9 @@ const PreviewTemplate = props => {
       />
       <div className="flex preview-content-style">
         <div className="preview-info-content flex-1 flex flex-column justify-content-center z-2">
-          <h1 className="text-center">{aboutMeData.name}</h1>
+          <h1 className="text-center">{notTranslationSiteData.myName}</h1>
           {props.jobs &&
-            translate(aboutMeData, "programing").map((t, index) => (
+            translate("programingTechnologies", language).map((t, index) => (
               <div
                 className="preview-description-container my-2"
                 key={`description-${index}`}
@@ -160,7 +164,7 @@ const PreviewTemplate = props => {
           {props.desc && <p className="preview-description">{props.desc}</p>}
           {props.social && (
             <div className="flex justify-content-center">
-              {previewData.social.map((i, index) => (
+              {social.map((i, index) => (
                 <SocialIconButton key={index} {...i} />
               ))}
             </div>

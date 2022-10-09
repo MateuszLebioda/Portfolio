@@ -4,8 +4,8 @@ import Timer from "../components/utils/timer";
 import PreviewTemplate from "../components/views/preview/previewTemplate";
 import Skills from "../components/views/skills/skills";
 import Layout from "../components/wrappers/Layout";
-import { aboutMeData } from "../data/complex-data";
-import { translate } from "../utils/translator";
+import { notTranslationSiteData } from "../data/string-data";
+import { translate } from "../language/languageUtils";
 
 const AboutMeStyle = styled.section`
   .about-me-timer-container {
@@ -38,7 +38,7 @@ const AboutMeStyle = styled.section`
   }
 `;
 
-const AboutMe = () => {
+const AboutMe = ({ pageContext }) => {
   const time = [
     {
       diff: "years",
@@ -71,21 +71,21 @@ const AboutMe = () => {
 
   return (
     <AboutMeStyle>
-      <Layout>
+      <Layout {...pageContext}>
         <PreviewTemplate
-          desc={translate(aboutMeData, "description")}
+          desc={translate("myDescription", pageContext.lang)}
           fixed
           social
           maxWidth="25vw"
         >
           <div>
             <h2 className="text-center about-me-font">
-              {translate(aboutMeData, "developerFor")}
+              {translate("developerFor", pageContext.lang)}
             </h2>
             <div className="flex about-me-timer-container">
               {time.map((t, index) => (
                 <Timer
-                  date={Date.parse(aboutMeData.startIT)}
+                  date={Date.parse(notTranslationSiteData.startIT)}
                   {...t}
                   key={`timer-${index}`}
                 />

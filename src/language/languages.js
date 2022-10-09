@@ -6,4 +6,5 @@ const languages = {
 module.exports = {
   languages,
   defaultLanguage: languages.PL,
+  languagesOrder: [languages.PL, languages.EN],
 };

@@ -5,6 +5,8 @@ import "primeflex/primeflex.css";
 import "../../assets/style/global-style.css";
 import Navbar from "./navbar";
 import styled from "styled-components";
+import LanguageContextProvider from "../../language/languageContext";
+import { graphql, useStaticQuery } from "gatsby";
 
 const LayoutStyle = styled.div`
   .layout-container {
@@ -26,18 +28,35 @@ const LayoutStyle = styled.div`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = props => {
   return (
-    <LayoutStyle>
-      <Navbar />
-      <div className="layout-container-all">
-        <div className="layout-container">{children}</div>
-        <div className="layout-container">
-          <Footer />
+    <LanguageContextProvider {...props}>
+      <LayoutStyle>
+        <Navbar />
+        <div className="layout-container-all">
+          <div className="layout-container">{props.children}</div>
+          <div className="layout-container">
+            <Footer />
+          </div>
         </div>
-      </div>
-    </LayoutStyle>
+      </LayoutStyle>
+    </LanguageContextProvider>
   );
 };
+
+export const Head = () => {
+  const data = useStaticQuery(query);
+  return <title>{data.site.siteMetadata.title}</title>;
+};
+
+const query = graphql`
+  {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
 
 export default Layout;

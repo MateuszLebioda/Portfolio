@@ -1,16 +1,15 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import footerData from "../../data/footer-data";
-import previewData from "../../data/preview-data";
 import SocialIconButton from "../utils/SocialIconButton";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { BiMessageAltDetail } from "react-icons/bi";
-import { contactData } from "../../data/complex-data";
-import { translate } from "../../utils/translator";
+import { notTranslationSiteData } from "../../data/string-data";
 
-import { getLink } from "../../utils/navigation";
+import { social } from "../../data/social";
+import { LanguageContext } from "../../language/languageContext";
+import { generateLink, translate } from "../../language/languageUtils";
 
 const FooterStyle = styled.footer`
   background-color: black;
@@ -50,10 +49,12 @@ const query = graphql`
   }
 `;
 
-const Footer = () => {
+const Footer = props => {
   const file = useStaticQuery(query);
   const imageAvatar = file.fileAvatar?.childImageSharp;
-  const { contact } = footerData;
+
+  const { language } = useContext(LanguageContext);
+
   return (
     <FooterStyle>
       <div className="footer-image my-auto">
@@ -69,39 +70,39 @@ const Footer = () => {
           &copy;
           {` ${new Date().getFullYear()} Copyright - Mateusz Lebioda`}
           <br />
-          {translate(contactData, "rightReserved")}
+          {translate("rightReserved", language)}
         </div>
       </div>
       <div className="footer-info">
-        <h2>{translate(contactData, "contact")}</h2>
-        {contactData.phone && (
+        <h2>{translate("contact", language)}</h2>
+        {notTranslationSiteData.phone && (
           <div className="flex footer-info-container">
             <FaPhone className="my-auto" />
             <div className="footer-contact-value-container">
-              {contactData.phone}
+              {notTranslationSiteData.phone}
             </div>
           </div>
         )}
-        {contactData.email && (
+        {notTranslationSiteData.email && (
           <div className="flex footer-info-container">
             <FaEnvelope className="my-auto" />
             <div className="footer-contact-value-container">
-              {contactData.email}
+              {notTranslationSiteData.email}
             </div>
           </div>
         )}
 
         <Link
-          to={getLink("/contact/me")}
+          to={generateLink("/contact/me", language)}
           className="footer-social-buttons flex footer-info-container"
         >
           <BiMessageAltDetail className="my-auto" />
           <div className="footer-contact-value-container">
-            {translate(contactData, "contactForm")}
+            {translate("contactForm", language)}
           </div>
         </Link>
         <div className="flex footer-info-container">
-          {previewData.social.map((i, index) => (
+          {social.map((i, index) => (
             <SocialIconButton
               key={index}
               {...i}

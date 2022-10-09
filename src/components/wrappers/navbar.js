@@ -1,16 +1,14 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import { linksList } from "../../data/complex-data";
-import previewData from "../../data/preview-data";
-import { changeLanguage } from "../../redux/language/languageSlice";
-import { getLink } from "../../utils/navigation";
-import { translate } from "../../utils/translator";
+import { LanguageContext } from "../../language/languageContext";
+import { links } from "../../data/links";
+import { social } from "../../data/social";
 import Icon from "../utils/icon";
 import NavbarButton from "../utils/navbarButton";
 import SocialIconButton from "../utils/SocialIconButton";
+import { generateLink, translate } from "../../language/languageUtils";
 
 const NavbarStyle = styled.nav`
   z-index: 10;
@@ -129,15 +127,14 @@ const NavbarStyle = styled.nav`
   }
 `;
 
-const Navbar = () => {
+const Navbar = props => {
   const file = useStaticQuery(query);
   const imageAvatar = file.fileAvatar?.childImageSharp;
 
   const [isTop, setTop] = useState(true);
   const [isMenuActive, setMenuActive] = useState(false);
 
-  const dispatch = useDispatch();
-  const language = useSelector(state => state.language);
+  const { language, pagePath, nextLanguage } = useContext(LanguageContext);
 
   useEffect(() => {
     window.onscroll = () => {
@@ -156,7 +153,7 @@ const Navbar = () => {
       >
         <div className="navbar-avatar-navigation">
           <div className="flex justify-content-center">
-            <Link to={getLink("/")}>
+            <Link to={generateLink("/", language)}>
               <GatsbyImage
                 image={getImage(imageAvatar)}
                 alt="avatar"
@@ -165,10 +162,11 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="navbar-navigation">
-            {linksList.map(l => (
+            {links.map(l => (
               <div className="my-2">
                 <NavbarButton
                   {...l}
+                  label={translate(l.label, language)}
                   key={`navbar-button-${l.lp}`}
                   color={!isTop && "black"}
                 />
@@ -176,19 +174,15 @@ const Navbar = () => {
             ))}
           </div>
         </div>
-
-        <div>
-          <button
-            onClick={() => {
-              dispatch(changeLanguage());
-            }}
-          >
-            {language.value}
-          </button>
-        </div>
+        <Link
+          to={generateLink(pagePath, nextLanguage)}
+          style={{ color: "white" }}
+        >
+          {language}
+        </Link>
 
         <div className="navbar-social-buttons">
-          {previewData.social.map((i, index) => (
+          {social.map((i, index) => (
             <SocialIconButton
               key={`navbar-social-${index}`}
               {...i}
@@ -209,7 +203,6 @@ const Navbar = () => {
             }}
           />
         </div>
-        {translate(1, 2)}
       </div>
 
       <div
@@ -217,11 +210,11 @@ const Navbar = () => {
           isTop ? "navbar-top-color" : "navbar-non-top-container"
         }`}
       >
-        {linksList.map(l => (
+        {links.map(l => (
           <Link to={l.href} onClick={() => setMenuActive(false)}>
             <div className="flex my-1 ml-3">
               <Icon icon={l.icon} className="my-auto mx-2" />
-              <div className="my-2">{l.label}</div>
+              <div className="my-2">{translate(l.label, language)}</div>
             </div>
           </Link>
         ))}

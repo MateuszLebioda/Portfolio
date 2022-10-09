@@ -10,6 +10,9 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import TimeLineTabButton from "./timeLineTagButton";
 import timeLineData from "../../../data/timeLine-data";
 import * as FontAwesome from "react-icons/fa";
+import { translate } from "../../../language/languageUtils";
+import { useContext } from "react";
+import { LanguageContext } from "../../../language/languageContext";
 
 const TimeLineStyle = styled.div`
   .time-line-container {
@@ -50,13 +53,14 @@ const TimeLineStyle = styled.div`
     }
   }
 `;
-const TimeLine = props => {
+const TimeLine = () => {
   const files = useStaticQuery(query);
   const images = files.timeLineImages?.nodes;
   const imagesIcon = files.timeLineIcons?.nodes;
   const imageBackground = files.fileBackground?.childImageSharp;
 
   const [isSmalScreen, setSmalScreen] = useState(null);
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
     if (isSmalScreen === null) {
@@ -113,13 +117,13 @@ const TimeLine = props => {
         key={`time-line-object-${index}`}
       >
         <div>
-          <h3>{timeLineObject.name}</h3>
+          <h3>{translate(timeLineObject.name, language)}</h3>
           {timeLineObject.image && img && (
             <div className="flex justify-content-center">
               <GatsbyImage image={img} alt="img" />
             </div>
           )}
-          <div className="mt-3">{timeLineObject.desc}</div>
+          <div className="mt-3">{translate(timeLineObject.desc, language)}</div>
           {timeLineObject.links && (
             <div className="flex flex-row-reverse mt-2">
               {timeLineObject?.links?.map((l, index) => (
@@ -143,11 +147,7 @@ const TimeLine = props => {
         className="fixed preview-avatar-background"
         alt="background"
       />
-      <div
-        className={`time-line-container ${
-          props.gradient && "time-line-gradient"
-        }`}
-      >
+      <div className={"time-line-container"}>
         <VerticalTimeline animate={!isSmalScreen} lineColor="Black">
           {timeLineData.map(mapTimeLineObject)}
         </VerticalTimeline>

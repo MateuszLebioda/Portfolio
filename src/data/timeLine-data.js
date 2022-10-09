@@ -1,7 +1,7 @@
 const timeLineData = [
   {
-    name: "Początek nauki na",
-    desc: "Rozpoczęcie nauki na Uniwersytecie Śląskim, na kierunku Informatyka, jest jednocześnie początkiem mojej przygody z programowaniem.",
+    name: "startLearningOn",
+    desc: "startLearningOnDesc",
     date: "2016-10-01",
     icon: {
       name: "FaSchool",
@@ -16,9 +16,8 @@ const timeLineData = [
     image: "us",
   },
   {
-    name: "Staż i pierwsza praca w",
-    desc: "Po niespełna dwóch latach nauki zacząłem swoją przygodę zawodową w firmie Comarch. Najpierw wakacyjny staż, a bezpośrednio po nim zostałem przyjęty jako Młodszy Programista.",
-    date: "2018-06-01",
+    name: "internshipAndFirstJob",
+    desc: "internshipAndFirstJobDesc",
     icon: {
       name: "FaBriefcase",
       background: "#152a95",
@@ -32,7 +31,7 @@ const timeLineData = [
     whiteDate: true,
   },
   {
-    name: "Java Persistence API/Hibernate",
+    name: "courseJavaPersistence",
     date: "2019-05-16",
     icon: {
       name: "FaChalkboardTeacher",
@@ -49,7 +48,7 @@ const timeLineData = [
     whiteDate: true,
   },
   {
-    name: "Tworzenie usług sieciowych (Web Services) w języku Java",
+    name: "courseWebServicesInJava",
     date: "2019-08-08",
     icon: {
       name: "FaChalkboardTeacher",
@@ -66,8 +65,8 @@ const timeLineData = [
     whiteDate: true,
   },
   {
-    name: "Pierwsza certyfikacja Java - 1ZO-808",
-    desc: "Pierwsza poważniejsza certyfikacja. Przełamanie bariery językowej. Ugruntowanie swojej wiedzy programistycznej z języka Java.",
+    name: "oracleCertification",
+    desc: "oracleCertificationDesc",
     date: "2019-10-30",
     icon: {
       name: "FaJava",
@@ -83,8 +82,8 @@ const timeLineData = [
     image: "oracle",
   },
   {
-    name: "Obrona pracy Inżynierskiej",
-    desc: 'Ukończenie studiów I stopnia, obrona pracy pt. "Webowa aplikacja kosztorysowa" i uzyskanie tytułu inżyniera. Studia I stopnia ukończyłem z oceną bardzo dobrą na dyplomie. System przygotowana w ramach pracy inżynierskiej składała się z trzech niezależnych aplikacji komunikujących się ze sobą. Części frontendowej (Angular), backendowej (Java-Spring) oraz serwera autoryzacyjnego (Keycloak).',
+    name: "engineeringThesisDefense",
+    desc: "engineeringThesisDefenseDesc",
     date: "2020-07-02",
     icon: {
       name: "FaGraduationCap",
@@ -107,8 +106,8 @@ const timeLineData = [
     ],
   },
   {
-    name: "Studia magisterskie na",
-    desc: "Po półrocznej przerwie powrót na uczelnię. Tym razem w trybie niestacjonarnym, aby łatwiej pogodzić pracę z nauką.",
+    name: "mastersDegreeIn",
+    desc: "mastersDegreeInDesc",
     date: "2020-10-01",
     icon: {
       name: "FaSchool",
@@ -123,7 +122,7 @@ const timeLineData = [
     image: "us",
   },
   {
-    name: "Wzorce projektowe w oparciu o przykłady w języku Java",
+    name: "designPatternsJava",
     date: "2019-08-08",
     icon: {
       name: "FaChalkboardTeacher",
@@ -140,7 +139,7 @@ const timeLineData = [
     whiteDate: true,
   },
   {
-    name: "Angular - kurs podstawowy. Framework aplikacji internetowych SPA",
+    name: "angularBasic",
     date: "2021-09-29",
     icon: {
       name: "FaChalkboardTeacher",
