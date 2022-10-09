@@ -9,6 +9,7 @@ import Icon from "../utils/icon";
 import NavbarButton from "../utils/navbarButton";
 import SocialIconButton from "../utils/SocialIconButton";
 import { generateLink, translate } from "../../language/languageUtils";
+import Flag from "react-world-flags";
 
 const NavbarStyle = styled.nav`
   z-index: 10;
@@ -46,6 +47,17 @@ const NavbarStyle = styled.nav`
       justify-content: start;
       flex-direction: column;
       margin-top: 1rem;
+    }
+
+    .navbar-flag-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar-flag {
+      border: 2px solid black;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
 
     .navbar-social-buttons {
@@ -136,6 +148,18 @@ const Navbar = props => {
 
   const { language, pagePath, nextLanguage } = useContext(LanguageContext);
 
+  const flag = (
+    <Link to={generateLink(pagePath, nextLanguage)} style={{ color: "white" }}>
+      <div className="navbar-flag-container">
+        <Flag
+          height="18"
+          code={language === "en" ? "gb" : language}
+          className="navbar-flag"
+        />
+      </div>
+    </Link>
+  );
+
   useEffect(() => {
     window.onscroll = () => {
       if (isTop && window.pageYOffset >= 3) {
@@ -144,6 +168,7 @@ const Navbar = props => {
         setTop(true);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -174,12 +199,6 @@ const Navbar = props => {
             ))}
           </div>
         </div>
-        <Link
-          to={generateLink(pagePath, nextLanguage)}
-          style={{ color: "white" }}
-        >
-          {language}
-        </Link>
 
         <div className="navbar-social-buttons">
           {social.map((i, index) => (
@@ -189,6 +208,7 @@ const Navbar = props => {
               className="flex justify-content-center"
             />
           ))}
+          {flag}
         </div>
         <div className="navbar-hamburger-icon">
           <Icon

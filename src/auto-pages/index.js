@@ -10,4 +10,8 @@ const IndexPage = ({ pageContext }) => {
   );
 };
 
+export const Head = props => {
+  return <title>{"Mateusz Lebioda"}</title>;
+};
+
 export default IndexPage;

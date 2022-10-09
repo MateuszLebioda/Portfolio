@@ -8,4 +8,8 @@ const ContactMePage = ({ pageContext }) => (
   </Layout>
 );
 
+export const Head = props => {
+  return <title>{"Mateusz Lebioda"}</title>;
+};
+
 export default ContactMePage;

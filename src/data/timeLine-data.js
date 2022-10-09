@@ -18,6 +18,7 @@ const timeLineData = [
   {
     name: "internshipAndFirstJob",
     desc: "internshipAndFirstJobDesc",
+    date: "2018-06-01",
     icon: {
       name: "FaBriefcase",
       background: "#152a95",
@@ -156,8 +157,8 @@ const timeLineData = [
     whiteDate: true,
   },
   {
-    name: "Obrona pracy Magisterskiej",
-    desc: 'Ukończenie studiów II stopnia, obrona pracy pt. "Wieloplatformowy szkieletowy system ekspertowy - realizacja oraz badania wydajnościowe algorytmów wnioskowania" i uzyskanie tytułu magistra. Studia magisterskie ukończyłem z wyróżnieniem uzyskując średnią ocen 4.71, co pozwoliło uzyskać ocenę celującą na dyplomie. Podczas pisania pracy powstała aplikacja Inference 2.0 - wieloplatformowy szkieletowy system ekspertowy. Aplikacja umożliwia tworzenie i edycję bazy wiedzy, wnioskowanie w przód oraz w tył uwzględniając różne strategie doboru reguł. Aplikacja powstałą w oparciu o technologię React oraz Electron.',
+    name: "mastersThesisDefense",
+    desc: "mastersThesisDefenseDesc",
     date: "2022-06-13",
     icon: {
       name: "FaGraduationCap",
@@ -180,7 +181,7 @@ const timeLineData = [
     ],
   },
   {
-    name: "Node.js, Express, MongoDB & More: The Complete Bootcamp 2022",
+    name: "nodeCourse",
     date: "2022-07",
     icon: {
       imageIcon: "udemy",
@@ -204,7 +205,7 @@ const timeLineData = [
     image: "udemy",
   },
   {
-    name: "Gatsby.js Tutorial and Projects Course",
+    name: "gatsbyCourse",
     date: "2022-08",
     icon: {
       imageIcon: "udemy",

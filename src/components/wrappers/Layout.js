@@ -6,7 +6,6 @@ import "../../assets/style/global-style.css";
 import Navbar from "./navbar";
 import styled from "styled-components";
 import LanguageContextProvider from "../../language/languageContext";
-import { graphql, useStaticQuery } from "gatsby";
 
 const LayoutStyle = styled.div`
   .layout-container {
@@ -43,20 +42,5 @@ const Layout = props => {
     </LanguageContextProvider>
   );
 };
-
-export const Head = () => {
-  const data = useStaticQuery(query);
-  return <title>{data.site.siteMetadata.title}</title>;
-};
-
-const query = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
 
 export default Layout;

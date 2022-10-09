@@ -8,4 +8,8 @@ const NotFound = props => {
   );
 };
 
+export const Head = props => {
+  return <title>404</title>;
+};
+
 export default NotFound;

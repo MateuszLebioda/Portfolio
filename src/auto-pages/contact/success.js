@@ -1,4 +1,3 @@
-import { graphql } from "gatsby";
 import React from "react";
 import AvatarPage from "../../components/views/avatarPage/avatarPage";
 import Layout from "../../components/wrappers/Layout";
@@ -16,16 +15,6 @@ const ContactSuccess = ({ pageContext }) => {
 
 export default ContactSuccess;
 
-export const Head = ({ data }) => {
-  return <title>{data.site.siteMetadata.title}</title>;
+export const Head = props => {
+  return <title>{"Mateusz Lebioda"}</title>;
 };
-
-export const query = graphql`
-  {
-    site: site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;

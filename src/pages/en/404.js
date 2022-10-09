@@ -9,4 +9,8 @@ const NotFoundEn = props => {
   );
 };
 
+export const Head = props => {
+  return <title>404</title>;
+};
+
 export default NotFoundEn;

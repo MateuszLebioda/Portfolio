@@ -10,4 +10,7 @@ const TimeLinePage = ({ pageContext }) => {
   );
 };
 
+export const Head = props => {
+  return <title>{"Mateusz Lebioda"}</title>;
+};
 export default TimeLinePage;

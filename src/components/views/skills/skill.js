@@ -1,6 +1,9 @@
 import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
+import { LanguageContext } from "../../../language/languageContext";
+import { translate } from "../../../language/languageUtils";
 
 const SkillStyle = styled.div`
   margin-bottom: 25px;
@@ -69,6 +72,8 @@ const SkillStyle = styled.div`
 `;
 
 const Skill = props => {
+  const { language } = useContext(LanguageContext);
+
   return (
     <SkillStyle>
       <div
@@ -93,7 +98,7 @@ const Skill = props => {
               props.img2 && "skill-desc-container-more"
             }`}
           >
-            {props.desc}
+            {translate(props.desc, language)}
           </div>
         </div>
       </div>
