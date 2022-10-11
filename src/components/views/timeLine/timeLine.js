@@ -142,11 +142,6 @@ const TimeLine = () => {
 
   return (
     <TimeLineStyle>
-      <GatsbyImage
-        image={getImage(imageBackground)}
-        className="fixed preview-avatar-background"
-        alt="background"
-      />
       <div className={"time-line-container"}>
         <VerticalTimeline animate={!isSmalScreen} lineColor="Black">
           {timeLineData.map(mapTimeLineObject)}

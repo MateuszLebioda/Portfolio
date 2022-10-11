@@ -16,6 +16,7 @@ const Skills = props => {
       <h1 className="text-center text-5xl">Technologie</h1>
       {skillsData.map((sk, index) => (
         <Skill
+          key={sk.name}
           {...sk}
           img={getImage(images.find(i => i.name === sk.img))}
           img2={getImage(images.find(i => i.name === sk.img2))}

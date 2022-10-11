@@ -6,6 +6,7 @@ import "../../assets/style/global-style.css";
 import Navbar from "./navbar";
 import styled from "styled-components";
 import LanguageContextProvider from "../../language/languageContext";
+import CodeBackground from "../utils/codeBackground";
 
 const LayoutStyle = styled.div`
   .layout-container {
@@ -33,7 +34,10 @@ const Layout = props => {
       <LayoutStyle>
         <Navbar />
         <div className="layout-container-all">
-          <div className="layout-container">{props.children}</div>
+          <div className="layout-container">
+            <CodeBackground />
+            {props.children}
+          </div>
           <div className="layout-container">
             <Footer />
           </div>

@@ -1,5 +1,4 @@
-import { graphql, navigate, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { navigate } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import { useContext } from "react";
@@ -38,11 +37,6 @@ const ContactMeStyle = styled.div`
     margin-bottom: 25px;
   }
 
-  .preview-avatar-background {
-    position: absolute;
-    min-height: calc(100vh + 90px);
-  }
-
   @media only screen and (max-width: 860px) {
     .contact-me-card {
       min-width: calc(100vw - 5px);
@@ -65,21 +59,7 @@ const ContactMeStyle = styled.div`
   }
 `;
 
-export const query = graphql`
-  {
-    fileBackground: file(name: { in: "code-background" }) {
-      childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG)
-      }
-    }
-  }
-`;
-
 const ContactMe = () => {
-  const data = useStaticQuery(query);
-
-  const imageBackground = data.fileBackground?.childImageSharp;
-
   const { language } = useContext(LanguageContext);
 
   const onSubmit = e => {
@@ -101,11 +81,6 @@ const ContactMe = () => {
 
   return (
     <ContactMeStyle className="flex justify-content-center">
-      <GatsbyImage
-        image={getImage(imageBackground)}
-        className="preview-avatar-background"
-        alt="background"
-      />
       <div className="contact-me-card z-2">
         <h1 className="text-center mt-6">{translate("contactMe", language)}</h1>
         <div className="z-2 p-2">

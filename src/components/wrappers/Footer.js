@@ -43,13 +43,13 @@ const query = graphql`
   {
     fileAvatar: file(name: { in: "logo-technologies" }) {
       childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG, width: 250)
+        gatsbyImageData(placeholder: TRACED_SVG, width: 180)
       }
     }
   }
 `;
 
-const Footer = props => {
+const Footer = () => {
   const file = useStaticQuery(query);
   const imageAvatar = file.fileAvatar?.childImageSharp;
 

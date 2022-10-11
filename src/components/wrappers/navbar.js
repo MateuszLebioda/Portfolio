@@ -19,6 +19,10 @@ const NavbarStyle = styled.nav`
   top: 0;
   left: 0;
 
+  .navbar-flags-small-screen {
+    display: none;
+  }
+
   .navbar-container {
     background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
@@ -91,6 +95,17 @@ const NavbarStyle = styled.nav`
     height: 90px;
     width: 100vw;
 
+    .navbar-flags-small-screen {
+      display: block;
+      height: 100%;
+      margin: auto;
+      padding-right: 1rem;
+
+      .navbar-flag-container {
+        padding-top: 15px;
+      }
+    }
+
     .navbar-top-color {
       background-color: rgba(0, 0, 0, 0.9);
       a {
@@ -148,8 +163,12 @@ const Navbar = props => {
 
   const { language, pagePath, nextLanguage } = useContext(LanguageContext);
 
-  const flag = (
-    <Link to={generateLink(pagePath, nextLanguage)} style={{ color: "white" }}>
+  const flag = className => (
+    <Link
+      to={generateLink(pagePath, nextLanguage)}
+      style={{ color: "white" }}
+      className={className}
+    >
       <div className="navbar-flag-container">
         <Flag
           height="18"
@@ -188,29 +207,30 @@ const Navbar = props => {
           </div>
           <div className="navbar-navigation">
             {links.map(l => (
-              <div className="my-2">
+              <div className="my-2" key={l.label}>
                 <NavbarButton
                   {...l}
                   label={translate(l.label, language)}
                   key={`navbar-button-${l.lp}`}
-                  color={!isTop && "black"}
+                  color={!isTop ? "black" : null}
                 />
               </div>
             ))}
           </div>
         </div>
-
         <div className="navbar-social-buttons">
           {social.map((i, index) => (
             <SocialIconButton
-              key={`navbar-social-${index}`}
+              key={`navbar-social-${i.name}`}
               {...i}
               className="flex justify-content-center"
             />
           ))}
-          {flag}
+          {flag()}
         </div>
         <div className="navbar-hamburger-icon">
+          {flag("navbar-flags-small-screen")}
+
           <Icon
             icon="GiHamburgerMenu"
             className={`${
@@ -231,7 +251,11 @@ const Navbar = props => {
         }`}
       >
         {links.map(l => (
-          <Link to={l.href} onClick={() => setMenuActive(false)}>
+          <Link
+            key={l.href}
+            to={generateLink(l.href, language)}
+            onClick={() => setMenuActive(false)}
+          >
             <div className="flex my-1 ml-3">
               <Icon icon={l.icon} className="my-auto mx-2" />
               <div className="my-2">{translate(l.label, language)}</div>

@@ -22,7 +22,7 @@ textarea:focus {
   outline: none;
 }
 
-.preview-avatar-background {
+/* .preview-avatar-background {
   z-index: -1;
   filter: blur(4px);
   opacity: 0.2;
@@ -31,7 +31,7 @@ textarea:focus {
   bottom: 0;
   left: 0;
   right: 0;
-}
+} */
 
 .h-0 {
   height: 0 !important;

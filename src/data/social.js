@@ -3,7 +3,7 @@ export const social = [
     name: "Discord",
     icon: "FaDiscord",
     link: "https://discord.com/channels/KozMeeN#1454",
-    color: "#0A66C2",
+    color: "#5662f6",
   },
   {
     name: "Git",
