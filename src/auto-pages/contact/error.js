@@ -1,29 +1,24 @@
 import React from "react";
+import { useContext } from "react";
 import AvatarPage from "../../components/views/avatarPage/avatarPage";
-import Layout from "../../components/wrappers/Layout";
 import { notTranslationSiteData } from "../../data/string-data";
+import { LanguageContext } from "../../language/languageContext";
+import { translate } from "../../language/languageUtils";
 
-const Error = ({ pageContext }) => {
+const Error = () => {
+  const { language } = useContext(LanguageContext);
+
   return (
-    <Layout {...pageContext}>
-      <AvatarPage
-        header="Ups.. Coś poszło nie tak"
-        message={
-          <>
-            <div>
-              Nie udało się nawiązać kontaktu. Spróbuj ponownie później lub
-              napisz do mnie bezpośrednio na
-            </div>
-            <div className="mt-3">{notTranslationSiteData.email}</div>
-          </>
-        }
-      />
-    </Layout>
+    <AvatarPage
+      header={translate("oops", language)}
+      message={
+        <>
+          <div>{translate("failedContact", language)}</div>
+          <div className="mt-3">{notTranslationSiteData.email}</div>
+        </>
+      }
+    />
   );
 };
 
 export default Error;
-
-export const Head = props => {
-  return <title>{"Mateusz Lebioda"}</title>;
-};

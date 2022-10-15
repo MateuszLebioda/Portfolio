@@ -1,20 +1,18 @@
 import React from "react";
+import { useContext } from "react";
 import AvatarPage from "../../components/views/avatarPage/avatarPage";
-import Layout from "../../components/wrappers/Layout";
+import { LanguageContext } from "../../language/languageContext";
+import { translate } from "../../language/languageUtils";
 
-const ContactSuccess = ({ pageContext }) => {
+const ContactSuccess = () => {
+  const { language } = useContext(LanguageContext);
+
   return (
-    <Layout {...pageContext}>
-      <AvatarPage
-        header="Dzięki za kontakt"
-        message="Odezwę się najszybciej jak się da"
-      />
-    </Layout>
+    <AvatarPage
+      header={translate("thanksForContact", language)}
+      message={translate("IllGetBack", language)}
+    />
   );
 };
 
 export default ContactSuccess;
-
-export const Head = props => {
-  return <title>{"Mateusz Lebioda"}</title>;
-};

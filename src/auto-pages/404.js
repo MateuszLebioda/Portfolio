@@ -1,24 +1,16 @@
 import React from "react";
+import { useContext } from "react";
 import AvatarPage from "../components/views/avatarPage/avatarPage";
-import Layout from "../components/wrappers/Layout";
-import {
-  getNextLanguage,
-  getPathWithoutLanguage,
-  translate,
-} from "../language/languageUtils";
+import { LanguageContext } from "../language/languageContext";
+import { translate } from "../language/languageUtils";
 
-const NotFoundPage = props => {
+const NotFoundPage = () => {
+  const { language } = useContext(LanguageContext);
   return (
-    <Layout
-      lang={props.language}
-      nextLang={getNextLanguage(props.language)}
-      pagePath={getPathWithoutLanguage(props.pathName)}
-    >
-      <AvatarPage
-        header="404"
-        message={translate("pageNotFoundHeder", props.language)}
-      />
-    </Layout>
+    <AvatarPage
+      header="404"
+      message={translate("pageNotFoundHeder", language)}
+    />
   );
 };
 

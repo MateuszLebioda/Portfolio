@@ -28,5 +28,9 @@ module.exports = {
       path: "/contact/success",
       component: "src/auto-pages/contact/success.js",
     },
+    {
+      path: "/404",
+      component: "src/auto-pages/404.js",
+    },
   ],
 };

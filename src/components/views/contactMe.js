@@ -72,10 +72,10 @@ const ContactMe = () => {
       body: new URLSearchParams(formData).toString(),
     })
       .then(r => {
-        navigate(generateLink("/contact/success"));
+        navigate(generateLink("/contact/success", language));
       })
       .catch(e => {
-        navigate(generateLink("/contact/error"));
+        navigate(generateLink("/contact/error", language));
       });
   };
 

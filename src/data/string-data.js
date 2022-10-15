@@ -8,7 +8,12 @@ const complexTranslationSiteData = {
 
   developerFor: "Programista od",
 
+  failedContact:
+    "Nie udało się nawiązać kontaktu. Spróbuj ponownie później lub napisz do mnie bezpośrednio na",
+
   historyOfDevelopment: "Historia rozwoju",
+
+  IllGetBack: "Odezwę się najszybciej jak się da",
 
   myDescription:
     "Programowanie to nie tylko mój zawód, ale także moje hobby. Tworzenie systemów czy stron internetowych, z których korzystają inni ludzie uskrzydla, daje satysfakcję i motywację do dalszego samodoskonalenia.",
@@ -17,6 +22,8 @@ const complexTranslationSiteData = {
   noContentYet: "Brak zawartości, na razie",
   noProjectsYet:
     "Jak na razie nie mam projektów którymi mógłbym się pochwalić 😔",
+
+  oops: "Ups... Coś poszło nie tak",
 
   pageNotFoundHeder: "Nie udało się odnaleźć strony",
   programingTechnologies: [
@@ -28,6 +35,7 @@ const complexTranslationSiteData = {
   rightReserved: "Wszystkie prawa zastrzeżone",
 
   textMessage: "Treść wiadomości",
+  thanksForContact: "Dzięki za kontakt",
 
   //time translation
   years: "Lat",
@@ -109,7 +117,12 @@ const complexTranslationSiteData = {
 
       developerFor: "Developer for",
 
+      failedContact:
+        "Failed to make contact. Try again later or write me directly at",
+
       historyOfDevelopment: "Development history",
+
+      IllGetBack: "I'll get back to you as soon as I can",
 
       myDescription:
         "Programing is not only my job it is also my passion. Creating web application and web pages, which are using by other people, give me wings, give me satisfaction and motivation for further self-improvement.",
@@ -118,6 +131,8 @@ const complexTranslationSiteData = {
       noContentYet: "No content yet",
       noProjectsYet: "I do not have any project to show 😔 yet!",
 
+      oops: "Oops... Something went wrong",
+
       pageNotFoundHeder: "Page not found",
       programingTechnologies: ["Java Developer", "Web Designer and Developer"],
       projects: "Projects",
@@ -125,6 +140,7 @@ const complexTranslationSiteData = {
       rightReserved: "All rights reserved",
 
       textMessage: "Message",
+      thanksForContact: "Thanks for getting in touch",
 
       //time translation
       years: "Years",

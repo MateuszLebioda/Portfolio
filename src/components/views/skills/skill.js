@@ -24,10 +24,10 @@ const SkillStyle = styled.div`
 
   .skill-right-content {
     flex-direction: row-reverse;
-    text-align: right;
   }
 
   .skill-desc-container {
+    text-align: center;
     max-width: 55vw;
     font-size: 1.2rem;
     font-weight: bold;
@@ -57,7 +57,6 @@ const SkillStyle = styled.div`
     }
 
     .skill-desc-container {
-      text-align: center;
       max-width: 580px;
       margin-left: auto;
       margin-right: auto;
@@ -92,7 +91,7 @@ const Skill = props => {
           />
         )}
         <div>
-          <h2>{props.name}</h2>
+          <h2 className="text-center">{props.name}</h2>
           <div
             className={`skill-desc-container my-auto ${
               props.img2 && "skill-desc-container-more"

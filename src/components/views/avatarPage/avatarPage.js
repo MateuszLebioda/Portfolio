@@ -31,11 +31,6 @@ const AvatarPage = props => {
 
 export const query = graphql`
   {
-    fileBackground: file(name: { in: "code-background" }) {
-      childImageSharp {
-        gatsbyImageData(placeholder: TRACED_SVG)
-      }
-    }
     fileAvatar: file(name: { in: "logo-technologies" }) {
       childImageSharp {
         gatsbyImageData(placeholder: TRACED_SVG, width: 500)

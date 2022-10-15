@@ -181,6 +181,7 @@ const Navbar = props => {
 
   useEffect(() => {
     window.onscroll = () => {
+      console.log(window.pageYOffset);
       if (isTop && window.pageYOffset >= 3) {
         setTop(false);
       } else if (isTop && window.pageYOffset === 0) {
