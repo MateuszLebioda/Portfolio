@@ -2,11 +2,11 @@ import React from "react";
 import { useContext } from "react";
 import styled from "styled-components";
 import Timer from "../components/utils/timer";
-import PreviewTemplate from "../components/views/preview/previewTemplate";
-import Skills from "../components/views/skills/skills";
-import { notTranslationSiteData } from "../data/string-data";
+import SkillsView from "../components/views/skills/skillsView";
+import { notTranslationSiteData } from "../language/string-translation-data";
 import { LanguageContext } from "../language/languageContext";
 import { translate } from "../language/languageUtils";
+import Preview from "../components/views/preview/preview";
 
 const AboutMeStyle = styled.section`
   .about-me-timer-container {
@@ -74,7 +74,7 @@ const AboutMe = () => {
 
   return (
     <AboutMeStyle>
-      <PreviewTemplate
+      <Preview
         desc={translate("myDescription", language)}
         fixed
         social
@@ -94,13 +94,10 @@ const AboutMe = () => {
             ))}
           </div>
         </div>
-      </PreviewTemplate>
-      <Skills />
+      </Preview>
+      <SkillsView />
     </AboutMeStyle>
   );
 };
 
-export const Head = props => {
-  return <title>{"Mateusz Lebioda"}</title>;
-};
 export default AboutMe;

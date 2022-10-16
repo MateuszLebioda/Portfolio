@@ -1,4 +1,4 @@
-const { complexTranslationSiteData } = require("../data/string-data");
+const { complexTranslationSiteData } = require("./string-translation-data");
 const { defaultLanguage, languagesOrder } = require("./languages");
 
 const translate = (key, language = defaultLanguage) => {

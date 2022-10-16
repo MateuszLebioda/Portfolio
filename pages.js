@@ -3,6 +3,7 @@ module.exports = {
     {
       path: "/",
       component: "src/auto-pages/index.js",
+      head: "",
     },
     {
       path: "/about-me",

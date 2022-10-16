@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext } from "react";
-import AvatarPage from "../../components/views/avatarPage/avatarPage";
-import { notTranslationSiteData } from "../../data/string-data";
+import AvatarPage from "../../components/views/avatar/avatarView";
 import { LanguageContext } from "../../language/languageContext";
 import { translate } from "../../language/languageUtils";
+import { notTranslationSiteData } from "../../language/string-translation-data";
 
 const Error = () => {
   const { language } = useContext(LanguageContext);

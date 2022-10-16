@@ -34,6 +34,7 @@ const complexTranslationSiteData = {
 
   rightReserved: "Wszystkie prawa zastrzeżone",
 
+  technologies: "Technologie",
   textMessage: "Treść wiadomości",
   thanksForContact: "Dzięki za kontakt",
 
@@ -139,6 +140,7 @@ const complexTranslationSiteData = {
 
       rightReserved: "All rights reserved",
 
+      technologies: "Technologies",
       textMessage: "Message",
       thanksForContact: "Thanks for getting in touch",
 

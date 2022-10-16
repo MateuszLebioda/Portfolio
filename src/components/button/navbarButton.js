@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { LanguageContext } from "../../language/languageContext";
 import { generateLink } from "../../language/languageUtils";
-import Icon from "./icon";
+import Icon from "../utils/icon";
 
 const NavbarButtonStyle = styled.div`
   width: 100%;

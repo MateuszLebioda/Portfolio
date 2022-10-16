@@ -1,25 +1,32 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import skillsData from "../../../data/skill-data";
+import { LanguageContext } from "../../../language/languageContext";
+import { translate } from "../../../language/languageUtils";
 import Skill from "./skill";
 
 const SkillStyle = styled.div``;
 
-const Skills = props => {
+const SkillsView = () => {
   const files = useStaticQuery(query);
   const images = files.skillsImages?.nodes;
 
+  const { language } = useContext(LanguageContext);
+
   return (
     <SkillStyle>
-      <h1 className="text-center text-5xl">Technologie</h1>
+      <h1 className="text-center text-5xl">
+        {translate("technologies", language)}
+      </h1>
       {skillsData.map((sk, index) => (
         <Skill
           key={sk.name}
           {...sk}
-          img={getImage(images.find(i => i.name === sk.img))}
-          img2={getImage(images.find(i => i.name === sk.img2))}
+          img={getImage(images.find((i) => i.name === sk.img))}
+          img2={getImage(images.find((i) => i.name === sk.img2))}
           right={index % 2 === 1}
         />
       ))}
@@ -40,4 +47,4 @@ const query = graphql`
   }
 `;
 
-export default Skills;
+export default SkillsView;

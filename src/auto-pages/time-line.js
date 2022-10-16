@@ -11,7 +11,7 @@ import { LanguageContext } from "../language/languageContext";
 import { translate } from "../language/languageUtils";
 import * as FontAwesome from "react-icons/fa";
 import timeLineData from "../data/timeLine-data";
-import TimeLineTabButton from "../components/views/timeLine/timeLineTagButton";
+import TimeLineTabButton from "../components/button/timeLineTagButton";
 
 const TimeLineStyle = styled.div`
   .time-line-container {

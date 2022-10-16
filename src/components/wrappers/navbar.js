@@ -3,11 +3,11 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { LanguageContext } from "../../language/languageContext";
-import { links } from "../../data/links";
-import { social } from "../../data/social";
+import { links } from "../../data/links-data";
+import { social } from "../../data/social-data";
 import Icon from "../utils/icon";
-import NavbarButton from "../utils/navbarButton";
-import SocialIconButton from "../utils/SocialIconButton";
+import NavbarButton from "../button/navbarButton";
+import SocialIconButton from "../button/socialIconButton";
 import { generateLink, translate } from "../../language/languageUtils";
 import Flag from "react-world-flags";
 

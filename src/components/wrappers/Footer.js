@@ -2,12 +2,12 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useContext } from "react";
 import styled from "styled-components";
-import SocialIconButton from "../utils/SocialIconButton";
+import SocialIconButton from "../button/socialIconButton";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { BiMessageAltDetail } from "react-icons/bi";
-import { notTranslationSiteData } from "../../data/string-data";
+import { notTranslationSiteData } from "../../language/string-translation-data";
 
-import { social } from "../../data/social";
+import { social } from "../../data/social-data";
 import { LanguageContext } from "../../language/languageContext";
 import { generateLink, translate } from "../../language/languageUtils";
 

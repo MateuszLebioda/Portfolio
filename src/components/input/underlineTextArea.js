@@ -18,8 +18,8 @@ const UnderlineTextAreaStyle = styled.div`
 
   label {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 10px;
+    left: 10px;
     color: var(--form-outline-color);
     pointer-events: none;
     transition: all 0.5s ease;
@@ -28,7 +28,7 @@ const UnderlineTextAreaStyle = styled.div`
   textarea:focus ~ label,
   textarea:valid ~ label,
   textarea:not(:placeholder-shown) ~ label {
-    transform: translate(-5px, -25px);
+    transform: translate(-10px, -30px);
     font-size: 0.8rem;
   }
 
@@ -39,7 +39,7 @@ const UnderlineTextAreaStyle = styled.div`
   }
 `;
 
-const UnderlineTextArea = (props) => {
+const UnderlineTextArea = props => {
   return (
     <UnderlineTextAreaStyle>
       <textarea placeholder=" " required name={props.name} />

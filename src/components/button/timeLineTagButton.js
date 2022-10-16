@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import * as FontAwesome from "react-icons/fa";
 
 const TimeLineTabButtonStyle = styled.div`
-  color: ${(props) => props.color};
+  color: ${props => props.color};
   font-size: 1.1rem;
   width: max-content;
 
@@ -15,7 +15,7 @@ const TimeLineTabButtonStyle = styled.div`
   padding-left: 0.1rem;
 
   :hover {
-    border: solid 2px ${(props) => props.color};
+    border: solid 2px ${props => props.color};
   }
 
   a {
@@ -37,7 +37,7 @@ const TimeLineTabButtonStyle = styled.div`
   }
 `;
 
-const TimeLineTabButton = (props) => {
+const TimeLineTabButton = props => {
   const [isHover, setIsHover] = useState(false);
 
   const iconStyle = {

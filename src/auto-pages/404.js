@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import AvatarPage from "../components/views/avatarPage/avatarPage";
+import AvatarPage from "../components/views/avatar/avatarView";
 import { LanguageContext } from "../language/languageContext";
 import { translate } from "../language/languageUtils";
 
@@ -15,7 +15,3 @@ const NotFoundPage = () => {
 };
 
 export default NotFoundPage;
-
-export const Head = () => {
-  return <title>404</title>;
-};

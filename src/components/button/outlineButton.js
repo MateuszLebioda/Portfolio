@@ -62,7 +62,7 @@ const OutlineButtonStyle = styled.button`
   }
 `;
 
-const OutlineButton = props => {
+const OutlineButton = (props) => {
   return (
     <OutlineButtonStyle type="submit">
       <span>{props.label}</span>
