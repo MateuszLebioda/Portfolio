@@ -180,7 +180,7 @@ const complexTranslationSiteData = {
 
       mastersThesisDefense: "Master's Thesis Defense",
       mastersThesisDefenseDesc:
-        "Completion of the second degree studies, defense of the thesis entitled  \"Multiplatform skeleton expert system - implementation and performance testing of inference algorithms\" and received a master's degree.  I completed my master's studies with honors, obtaining a grade point average of 4.71, which allowed me to get a perfect grade on my diploma. During the writing of the thesis, the Inference 2.0 application was created - a multi-platform expert system. The application allows you to create and edit the knowledge base, forward and backward inference taking into account different rule selection strategies. The application was created based on React and Electron technology.",
+        "Completion of the 2nd degree studies, defense of the thesis entitled  \"Multiplatform skeleton expert system - implementation and performance testing of inference algorithms\" and received a master's degree.  I completed my master's studies with honors, obtaining a grade point average of 4.71, which allowed me to get a perfect grade on my diploma. During the writing of the thesis, the Inference 2.0 application was created - a multi-platform expert system. The application allows you to create and edit the knowledge base, forward and backward inference taking into account different rule selection strategies. The application was created based on React and Electron technology.",
 
       oracleCertification: "First certification Java - 1ZO-808",
       oracleCertificationDesc:
@@ -192,9 +192,9 @@ const complexTranslationSiteData = {
 
       //skill
 
-      reactSkill: `When writing the application, closely related to my master's thesis, it was necessary to choose a technology. Application was to work in two mode, as a web application  in browser and as a desktop. I decided to use a Electorn technologie to develop application, so as main framework I had to choose one of few available JavaScript's technologies. I had to choose from Angular, which I learned a little earlier, Vue about which I did know absolutely nothing and completely new to me technologie React. Me choose was React, which was a hit. Technologie has worked very well and I started to delve more and more into web technologies and to JavaScript language. In the meantime, I was given the opportunity to develop a small, internal React-based, application as part of my professional work, which only allowed me to delve even deeper into the world of React and learn more broadly about JavaScript.`,
+      reactSkill: `When writing the application, closely related to my master's thesis, it was necessary to choose a technology. Application was to work in two mode, as a web application  in browser and as a desktop. I decided to use a Electorn, so as main framework I had to choose one of few available JavaScript's technologies. I had to choose from Angular, which I learned a little earlier, Vue about which I did know absolutely nothing and completely new to me technologie React. Me choose was React, which was a hit. Technologie has worked very well. That was my start to delve  into web development and to JavaScript language. In the meantime, I was given the opportunity to develop a small internal frontend React-based application as part of my professional work, which only gave me the opportunity to learn even more about the world of React.`,
 
-      gatsbySkill: `In work I use Java language, on my own hand I learn JavaScript, but I create nothing particular what I could boast about. Therefore, it's time to start somewhere. Gatsby, in a nutshell, allows you to create static websites using the React engine, which is why I chose this technology to start my adventure in creating static websites. And so, this website was created using this technology.`,
+      gatsbySkill: `In job I use Java language, on my own hand I learn JavaScript, but I create nothing particular what I could boast about. Therefore, it's time to start somewhere. Gatsby, in a nutshell, allows you to create static websites using the React engine, which is why I chose this technology to start my adventure in creating static websites. And so, this website was created using this technology.`,
 
       htmlSkill:
         "Indispensable tools for creating anything on the web. Whether it's applications or websites, it's hard to imagine creating front-end parts without using these technologies.",
@@ -209,7 +209,7 @@ const complexTranslationSiteData = {
         "The technology, like many others based on JavaScript, I am just getting to know. On the other hand, the mere realization that it is possible to create both frontend and backend parts using a single programming language greatly encourages me to deepen my knowledge of this technology.",
 
       gitSkill:
-        "The version control system I use both professionally and privately. I have my main repository on GitHub, while I was still in contact with such repositories as GitLab, Bitbucketand Gerrit.",
+        "The version control system I use both professionally and privately. I have my main repository on GitHub, while I was still in contact with such repositories as GitLab, Bitbucketand or Gerrit.",
     },
   },
 };

@@ -154,7 +154,7 @@ const NavbarStyle = styled.nav`
   }
 `;
 
-const Navbar = props => {
+const Navbar = (props) => {
   const file = useStaticQuery(query);
   const imageAvatar = file.fileAvatar?.childImageSharp;
 
@@ -163,7 +163,7 @@ const Navbar = props => {
 
   const { language, pagePath, nextLanguage } = useContext(LanguageContext);
 
-  const flag = className => (
+  const flag = (className) => (
     <Link
       to={generateLink(pagePath, nextLanguage)}
       style={{ color: "white" }}
@@ -181,7 +181,6 @@ const Navbar = props => {
 
   useEffect(() => {
     window.onscroll = () => {
-      console.log(window.pageYOffset);
       if (isTop && window.pageYOffset >= 3) {
         setTop(false);
       } else if (isTop && window.pageYOffset === 0) {
@@ -207,7 +206,7 @@ const Navbar = props => {
             </Link>
           </div>
           <div className="navbar-navigation">
-            {links.map(l => (
+            {links.map((l) => (
               <div className="my-2" key={l.label}>
                 <NavbarButton
                   {...l}
@@ -239,7 +238,7 @@ const Navbar = props => {
             } flex justify-content-center flex-column`}
             config={{
               onClick: () => {
-                setMenuActive(prev => !prev);
+                setMenuActive((prev) => !prev);
               },
             }}
           />
@@ -251,7 +250,7 @@ const Navbar = props => {
           isTop ? "navbar-top-color" : "navbar-non-top-container"
         }`}
       >
-        {links.map(l => (
+        {links.map((l) => (
           <Link
             key={l.href}
             to={generateLink(l.href, language)}

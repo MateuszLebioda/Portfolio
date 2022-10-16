@@ -7,6 +7,7 @@ import { notTranslationSiteData } from "../language/string-translation-data";
 import { LanguageContext } from "../language/languageContext";
 import { translate } from "../language/languageUtils";
 import Preview from "../components/views/preview/preview";
+import { Seo } from "../components/wrappers/seo";
 
 const AboutMeStyle = styled.section`
   .about-me-timer-container {
@@ -99,5 +100,7 @@ const AboutMe = () => {
     </AboutMeStyle>
   );
 };
+
+export const Head = () => <Seo />;
 
 export default AboutMe;

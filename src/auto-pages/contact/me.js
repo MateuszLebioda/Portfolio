@@ -7,6 +7,7 @@ import { LanguageContext } from "../../language/languageContext";
 import OutlineButton from "../../components/button/outlineButton";
 import UnderlineInput from "../../components/input/underlineInput";
 import UnderlineTextArea from "../../components/input/underlineTextArea";
+import { Seo } from "../../components/wrappers/seo";
 
 const ContactMeStyle = styled.div`
   min-height: 100vh;
@@ -62,7 +63,7 @@ const ContactMeStyle = styled.div`
 const ContactMePage = () => {
   const { language } = useContext(LanguageContext);
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     let myForm = e.target;
     let formData = new FormData(myForm);
@@ -71,10 +72,10 @@ const ContactMePage = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(r => {
+      .then((r) => {
         navigate(generateLink("/contact/success", language));
       })
-      .catch(e => {
+      .catch((e) => {
         navigate(generateLink("/contact/error", language));
       });
   };
@@ -112,5 +113,7 @@ const ContactMePage = () => {
     </ContactMeStyle>
   );
 };
+
+export const Head = () => <Seo />;
 
 export default ContactMePage;

@@ -28,7 +28,6 @@ const getNextLanguage = language => {
 };
 
 const getPathWithoutLanguage = path => {
-  console.log(path);
   const pathArray = path.split("/").filter((p, i) => i !== 0);
   if (languagesOrder.includes(pathArray[0])) {
     pathArray.shift();

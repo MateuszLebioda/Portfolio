@@ -12,6 +12,7 @@ import { translate } from "../language/languageUtils";
 import * as FontAwesome from "react-icons/fa";
 import timeLineData from "../data/timeLine-data";
 import TimeLineTabButton from "../components/button/timeLineTagButton";
+import { Seo } from "../components/wrappers/seo";
 
 const TimeLineStyle = styled.div`
   .time-line-container {
@@ -66,7 +67,7 @@ const TimeLinePage = () => {
       setSmalScreen(!isSmalScreen && window.innerWidth <= 860);
     }
 
-    window.addEventListener("resize", event => {
+    window.addEventListener("resize", (event) => {
       if (isSmalScreen && window.innerWidth > 860) {
         setSmalScreen(false);
       } else if (!isSmalScreen && window.innerWidth <= 860) {
@@ -77,9 +78,9 @@ const TimeLinePage = () => {
   }, []);
 
   const mapTimeLineObject = (timeLineObject, index) => {
-    const img = getImage(images.find(i => i.name === timeLineObject.image));
+    const img = getImage(images.find((i) => i.name === timeLineObject.image));
     const imageIcon = getImage(
-      imagesIcon.find(i => i.name === timeLineObject.icon.imageIcon)
+      imagesIcon.find((i) => i.name === timeLineObject.icon.imageIcon)
     );
 
     const icon = ({ icon }, imageIcon) => {
@@ -172,5 +173,7 @@ const query = graphql`
     }
   }
 `;
+
+export const Head = () => <Seo />;
 
 export default TimeLinePage;
