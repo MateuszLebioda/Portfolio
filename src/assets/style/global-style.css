@@ -1,7 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.font-pl {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+}
 
 html {
-  font-family: "Silkscreen", cursive;
+  font-family: "Chakra Petch", sans-serif;
   font-size: 18px;
 }
 
@@ -10,7 +17,31 @@ a {
   color: black;
 }
 
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* .preview-avatar-background {
+  z-index: -1;
+  filter: blur(4px);
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} */
+
+.h-0 {
+  height: 0 !important;
+}
+
 :root {
+  --form-outline-color: gray;
+  --form-valid-color: #408fd4;
+  --form-invalid-color: red;
+
   --text-color: #495057;
   --text-color-secondary: #6c757d;
   --primary-color: #2196f3;
