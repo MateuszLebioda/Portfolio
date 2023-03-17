@@ -67,6 +67,8 @@ const complexTranslationSiteData = {
   internshipAndFirstJobDesc:
     "Po niespełna dwóch latach nauki zacząłem swoją przygodę zawodową w firmie Comarch. Najpierw wakacyjny staż, a bezpośrednio po nim zostałem przyjęty jako Młodszy Programista.",
 
+  jsCourse: "Nowoczesny JavaScript - Warsztat praktyczny",
+
   nodeCourse: "Node.js, Express, MongoDB & More: The Complete Bootcamp 2022",
 
   mastersDegreeIn: "Studia magisterskie na",
@@ -170,6 +172,8 @@ const complexTranslationSiteData = {
       internshipAndFirstJob: "Internship and first job in",
       internshipAndFirstJobDesc:
         "After less than two years of study, I started my professional adventure at Comarch. First a summer internship and immediately after that I was accepted as a Junior Programmer.",
+
+      jsCourse: "Modern JavaScript - Practical workshop",
 
       nodeCourse:
         "Node.js, Express, MongoDB & More: The Complete Bootcamp 2022",

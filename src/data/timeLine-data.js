@@ -228,6 +228,23 @@ const timeLineData = [
     ],
     image: "udemy",
   },
+  {
+    name: "jsCourse",
+    date: "2023-03-8",
+    icon: {
+      name: "FaChalkboardTeacher",
+      background: "white",
+      color: "#152a95",
+      border: "solid 3px #152a95",
+    },
+    style: {
+      background: "#152a95",
+      color: "white",
+      border: "solid 2px black",
+    },
+    image: "comarch-szkolenia",
+    whiteDate: true,
+  },
 ];
 
 export default timeLineData;
