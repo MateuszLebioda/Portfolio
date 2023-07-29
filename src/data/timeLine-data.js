@@ -245,6 +245,30 @@ const timeLineData = [
     image: "comarch-szkolenia",
     whiteDate: true,
   },
+  {
+    name: "microservicesCourse",
+    date: "2023-07",
+    icon: {
+      imageIcon: "udemy",
+      background: "white",
+      color: "#a435f0",
+      border: "solid 3px #a435f0",
+    },
+    style: {
+      background: "white",
+      color: "black",
+      border: "solid 2px #a435f0",
+    },
+    links: [
+      {
+        name: "Udemy",
+        link: "https://www.udemy.com/course/microservices-with-node-js-and-react/",
+        color: "#a435f0",
+        imageIcon: "udemy",
+      },
+    ],
+    image: "udemy",
+  },
 ];
 
 export default timeLineData;

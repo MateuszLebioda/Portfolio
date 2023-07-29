@@ -26,10 +26,7 @@ const complexTranslationSiteData = {
   oops: "Ups... Coś poszło nie tak",
 
   pageNotFoundHeder: "Nie udało się odnaleźć strony",
-  programingTechnologies: [
-    "Programista Java",
-    "Projektant stron internetowych",
-  ],
+  programingTechnologies: ["Full Stack Developer"],
   projects: "Projekty",
 
   rightReserved: "Wszystkie prawa zastrzeżone",
@@ -78,6 +75,8 @@ const complexTranslationSiteData = {
   mastersThesisDefense: "Obrona Pracy Magisterskiej",
   mastersThesisDefenseDesc:
     'Ukończenie studiów II stopnia, obrona pracy pt. "Wieloplatformowy szkieletowy system ekspertowy - realizacja oraz badania wydajnościowe algorytmów wnioskowania" i uzyskanie tytułu magistra. Studia magisterskie ukończyłem z wyróżnieniem uzyskując średnią ocen 4.71, co pozwoliło uzyskać ocenę celującą na dyplomie. Podczas pisania pracy powstała aplikacja Inference 2.0 - wieloplatformowy szkieletowy system ekspertowy. Aplikacja umożliwia tworzenie i edycję bazy wiedzy, wnioskowanie w przód oraz w tył uwzględniając różne strategie doboru reguł. Aplikacja powstałą w oparciu o technologię React oraz Electron.',
+
+  microservicesCourse: "Mikroserwisy z wykorzystaniem Node JS and React",
 
   oracleCertification: "Pierwsza certyfikacja Java - 1ZO-808",
   oracleCertificationDesc:
@@ -137,7 +136,7 @@ const complexTranslationSiteData = {
       oops: "Oops... Something went wrong",
 
       pageNotFoundHeder: "Page not found",
-      programingTechnologies: ["Java Developer", "Web Designer and Developer"],
+      programingTechnologies: ["Full Stack Developer"],
       projects: "Projects",
 
       rightReserved: "All rights reserved",
@@ -185,6 +184,8 @@ const complexTranslationSiteData = {
       mastersThesisDefense: "Master's Thesis Defense",
       mastersThesisDefenseDesc:
         "Completion of the 2nd degree studies, defense of the thesis entitled  \"Multiplatform skeleton expert system - implementation and performance testing of inference algorithms\" and received a master's degree.  I completed my master's studies with honors, obtaining a grade point average of 4.71, which allowed me to get a perfect grade on my diploma. During the writing of the thesis, the Inference 2.0 application was created - a multi-platform expert system. The application allows you to create and edit the knowledge base, forward and backward inference taking into account different rule selection strategies. The application was created based on React and Electron technology.",
+
+      microservicesCourse: "Microservices with Node JS and React",
 
       oracleCertification: "First certification Java - 1ZO-808",
       oracleCertificationDesc:
