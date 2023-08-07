@@ -8,6 +8,7 @@ import { social } from "../../../data/social-data";
 import { useContext } from "react";
 import { LanguageContext } from "../../../language/languageContext";
 import { translate } from "../../../language/languageUtils";
+import ContentContainer from "../../wrappers/content-container.js";
 
 const PreviewStyle = styled.section`
   font-family: "Press Start 2P", cursive;
@@ -29,9 +30,7 @@ const PreviewStyle = styled.section`
 
   .preview-description {
     line-height: 2;
-    max-width: 550px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 560px;
   }
 
   .preview-avatar-image {
@@ -86,10 +85,7 @@ const PreviewStyle = styled.section`
       min-height: calc(100vh - 85px);
     }
 
-    min-height: 100vh;
-
     .preview-info-content {
-      max-height: 40vh;
       h1 {
         font-size: 2rem;
 
@@ -105,7 +101,6 @@ const PreviewStyle = styled.section`
     }
 
     .previe-image-container {
-      max-height: 35vh;
       margin-top: 25px;
     }
 
@@ -142,13 +137,19 @@ const Preview = (props) => {
           {props.jobs &&
             translate("programingTechnologies", language).map((t, index) => (
               <div
-                className="preview-description-container my-2"
+                className="preview-description-container my-2 mx-auto"
                 key={`description-${index}`}
               >
                 <div className="preview-paragraf text-center">{t}</div>
               </div>
             ))}
-          {props.desc && <p className="preview-description">{props.desc}</p>}
+          {props.desc && (
+            <div className="flex justify-content-center">
+              <ContentContainer className="preview-description text-center">
+                <p>{props.desc}</p>
+              </ContentContainer>
+            </div>
+          )}
           {props.social && (
             <div className="flex justify-content-center">
               {social.map((i, index) => (

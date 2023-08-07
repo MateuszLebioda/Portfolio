@@ -229,6 +229,23 @@ const timeLineData = [
     image: "udemy",
   },
   {
+    name: "oracleCertificationOcp",
+    desc: "oracleCertificationDescOcp",
+    date: "2023-03-31",
+    icon: {
+      name: "FaJava",
+      background: "white",
+      color: "#ff0000",
+      border: "solid 3px #f00",
+    },
+    style: {
+      background: "white",
+      color: "black",
+      border: "solid 2px #ff0000",
+    },
+    image: "oracle",
+  },
+  {
     name: "jsCourse",
     date: "2023-03-8",
     icon: {
