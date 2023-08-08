@@ -28,6 +28,8 @@ const AboutMeStyle = styled.section`
   }
 
   @media only screen and (max-width: 860px) {
+    padding-top: 15px;
+
     .about-me-timer-container {
       flex-direction: column;
     }
@@ -82,10 +84,10 @@ const AboutMe = () => {
         maxWidth="25vw"
       >
         <div>
-          <h2 className="text-center about-me-font">
+          <h1 className="text-center about-me-font mb-5 ">
             {translate("developerFor", language)}
-          </h2>
-          <div className="flex about-me-timer-container">
+          </h1>
+          <div className="flex about-me-timer-container flex-wrap justify-content-around gap-3">
             {time.map((t, index) => (
               <Timer
                 date={Date.parse(notTranslationSiteData.startIT)}

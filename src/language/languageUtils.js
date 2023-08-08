@@ -17,8 +17,8 @@ const generateLink = (link, linkLanguage) => {
   }
 };
 
-const getNextLanguage = language => {
-  let currentLangIndex = languagesOrder.findIndex(l => l === language);
+const getNextLanguage = (language) => {
+  let currentLangIndex = languagesOrder.findIndex((l) => l === language);
   if (currentLangIndex + 1 >= languagesOrder.length) {
     currentLangIndex = 0;
   } else {
@@ -27,7 +27,7 @@ const getNextLanguage = language => {
   return languagesOrder[currentLangIndex];
 };
 
-const getPathWithoutLanguage = path => {
+const getPathWithoutLanguage = (path) => {
   const pathArray = path.split("/").filter((p, i) => i !== 0);
   if (languagesOrder.includes(pathArray[0])) {
     pathArray.shift();

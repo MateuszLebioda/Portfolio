@@ -3,6 +3,14 @@ const skillsData = [
     name: "Java",
     img: "java",
     desc: "javaSkill",
+    connectedSkills: [
+      "javaee",
+      "spring",
+      "tomcat",
+      "wildfly",
+      "oracleDb",
+      "postgres",
+    ],
   },
   {
     name: "React",
@@ -15,26 +23,21 @@ const skillsData = [
     desc: "javaScriptSkill",
   },
   {
-    name: "Gatsby",
-    img: "gatsby",
-    desc: "gatsbySkill",
-  },
-  {
-    name: "HTML / CSS",
-    img: "css",
-    img2: "html",
-    desc: "htmlSkill",
-  },
-  {
     name: "Node.js",
     img: "node",
     desc: "nodeSkill",
+    connectedSkills: ["mongo", "express"],
   },
-
   {
-    name: "Git",
-    img: "git",
-    desc: "gitSkill",
+    name: "Docker / Kubernetes",
+    img: "docker",
+    img2: "kubernetes",
+    desc: "dockerSkill",
+  },
+  {
+    name: "Gatsby",
+    img: "gatsby",
+    desc: "gatsbySkill",
   },
 ];
 
