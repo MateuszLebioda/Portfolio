@@ -118,7 +118,7 @@ const Preview = (props) => {
     {
       fileAvatar: file(name: { in: "logo-technologies" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: TRACED_SVG)
+          gatsbyImageData(placeholder: TRACED_SVG, height: 550)
         }
       }
     }
