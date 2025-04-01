@@ -286,6 +286,47 @@ const timeLineData = [
     ],
     image: "udemy",
   },
+  {
+    name: "dna",
+    date: "2024",
+    desc: "dnaDescription",
+    icon: {
+      name: "FaChalkboardTeacher",
+      background: "white",
+      color: "#e03c31",
+      border: "solid 3px #e03c31",
+    },
+    style: {
+      background: "white",
+      color: "black",
+      border: "solid 2px #e03c31",
+    },
+    links: [
+      {
+        name: "EDU @ devstyle",
+        link: "https://droganowoczesnegoarchitekta.pl/",
+        color: "#e03c31",
+      },
+    ],
+    image: "dna",
+  },
+  {
+    name: "linuxCourse",
+    date: "2025-03-31",
+    icon: {
+      name: "FaChalkboardTeacher",
+      background: "white",
+      color: "#152a95",
+      border: "solid 3px #152a95",
+    },
+    style: {
+      background: "#152a95",
+      color: "white",
+      border: "solid 2px black",
+    },
+    image: "comarch-szkolenia",
+    whiteDate: true,
+  },
 ];
 
 export default timeLineData;

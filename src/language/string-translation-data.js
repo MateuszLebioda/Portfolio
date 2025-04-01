@@ -55,6 +55,10 @@ const complexTranslationSiteData = {
   courseWebServicesInJava:
     "Tworzenie usług sieciowych (Web Services) w języku Java",
 
+  dna: "Droga nowoczesnego architekta",
+  dnaDescription:
+    "Obszerne szkolenie poszerzające moje kompetencje o wiedzę z dziedziny architektury oprogramowania. Szkolenie dotykało takich tematów jak \n - DDD, \n - Event Stormingi, \n - Agregaty i CQRS \n oraz wiele innych.",
+
   designPatternsJava: "Wzorce projektowe w oparciu o przykłady w języku Java.",
 
   engineeringThesisDefense: "Obrona pracy inżynierskiej",
@@ -68,6 +72,8 @@ const complexTranslationSiteData = {
     "Po niespełna dwóch latach nauki zacząłem swoją przygodę zawodową w firmie Comarch. Najpierw wakacyjny staż, a bezpośrednio po nim zostałem przyjęty jako Młodszy Programista.",
 
   jsCourse: "Nowoczesny JavaScript - Warsztat praktyczny",
+
+  linuxCourse: "Linux – instalacja, konfiguracja i obsługa systemu",
 
   nodeCourse: "Node.js, Express, MongoDB & More: The Complete Bootcamp 2022",
 
@@ -204,6 +210,10 @@ Armed with the knowledge of Docker and Kubernetes, I've been able to harness the
       courseJavaPersistence: "Java Persistence API/Hibernate",
       courseWebServicesInJava: "Development of Web Services in Java",
 
+      dna: "Droga nowoczesnego architekta",
+      dnaDescription:
+        "Extensive training expanding my competences with knowledge in the field of software architecture. The training touched on topics such as \n - DDD, \n - Event Storming, \n - Aggregates and CQRS \n and many others.",
+
       designPatternsJava: "Design patterns based on examples in Java language",
 
       engineeringThesisDefense: "Engineering Thesis Defense",
@@ -217,6 +227,8 @@ Armed with the knowledge of Docker and Kubernetes, I've been able to harness the
         "After less than two years of study, I started my professional adventure at Comarch. First a summer internship and immediately after that I was accepted as a Junior Programmer.",
 
       jsCourse: "Modern JavaScript - Practical workshop",
+
+      linuxCourse: "Linux - instalation, configuration and system maintenance",
 
       nodeCourse:
         "Node.js, Express, MongoDB & More: The Complete Bootcamp 2022",
