@@ -1,5 +1,6 @@
 const { complexTranslationSiteData } = require("./string-translation-data");
 const { defaultLanguage, languagesOrder } = require("./languages");
+const parser = require("html-react-parser");
 
 const translate = (key, language = defaultLanguage) => {
   if (language === defaultLanguage) {
@@ -7,6 +8,11 @@ const translate = (key, language = defaultLanguage) => {
   } else {
     return complexTranslationSiteData?.translation[language][key];
   }
+};
+
+const translateHtml = (key, language = defaultLanguage) => {
+  const text = translate(key, language);
+  if (text) return parser(`${text.replaceAll("\n", "<br/>")}`);
 };
 
 const generateLink = (link, linkLanguage) => {
@@ -37,6 +43,7 @@ const getPathWithoutLanguage = (path) => {
 
 module.exports = {
   translate,
+  translateHtml,
   generateLink,
   getNextLanguage,
   getPathWithoutLanguage,

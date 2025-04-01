@@ -8,7 +8,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import styled from "styled-components";
 import { LanguageContext } from "../language/languageContext";
-import { translate } from "../language/languageUtils";
+import { translate, translateHtml } from "../language/languageUtils";
 import * as FontAwesome from "react-icons/fa";
 import timeLineData from "../data/timeLine-data";
 import TimeLineTabButton from "../components/button/timeLineTagButton";
@@ -80,7 +80,7 @@ const TimeLinePage = () => {
   const mapTimeLineObject = (timeLineObject, index) => {
     const img = getImage(images.find((i) => i.name === timeLineObject.image));
     const imageIcon = getImage(
-      imagesIcon.find((i) => i.name === timeLineObject.icon.imageIcon)
+      imagesIcon.find((i) => i.name === timeLineObject.icon.imageIcon),
     );
 
     const icon = ({ icon }, imageIcon) => {
@@ -120,10 +120,12 @@ const TimeLinePage = () => {
           <h3>{translate(timeLineObject.name, language)}</h3>
           {timeLineObject.image && img && (
             <div className="flex justify-content-center">
-              <GatsbyImage image={img} alt="img" />
+              <GatsbyImage image={img} alt="img" style={{ maxWidth: "50%" }} />
             </div>
           )}
-          <div className="mt-3">{translate(timeLineObject.desc, language)}</div>
+          <div className="mt-3">
+            {translateHtml(timeLineObject.desc, language)}
+          </div>
           {timeLineObject.links && (
             <div className="flex flex-row-reverse mt-2">
               {timeLineObject?.links?.map((l, index) => (
